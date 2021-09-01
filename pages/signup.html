@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="../css/google_keep.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+  <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js" integrity="sha384-DfXdz2htPH0lsSSs5nCTpuj/zy4C+OGpamoFVy38MVBnE+IbbVYUew+OrCXaRkfj" crossorigin="anonymous"></script>
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-ho+j7jyWK8fNQe+A12Hb8AhRq26LrZ/JpcUGGOn+Y7RsweNrtN/tE3MoK7ZeZDyx" crossorigin="anonymous"></script>
+  <link href="https://fonts.googleapis.com/icon?family=Material+Icons+Outlined" rel="stylesheet">
+  <title>Document</title>
+  <link rel="stylesheet" href="../css/signup.css">
+</head>
+
+<body>
+  <div class="body-section">
+    <div class="body-container">
+
+      <!-- logo section -->
+
+      <div class="logo-section">
+          <img src="../assets/signuplogo.png">
+          <h1>ONLINE BOOK SHOPING</h1>
+      </div>    
+
+      <!-- form section -->
+
+      <div class="form-section">        
+        <nav>
+          <div class="nav nav-tabs" id="nav-tab" role="tablist">
+            <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">LOGIN</a>              
+            <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">SIGNUP</a>
+          </div>
+        </nav>
+        <div class="tab-content" id="nav-tabContent">
+
+          <!-- login page -->
+
+          <div class="tab-pane fade show active" id="nav-home" role="tabpanel" aria-labelledby="nav-home-tab">
+
+            <form id="login-page"> 
+
+              <div class="email-input">   
+                <label class="email">Email Id</label>
+                <li style="list-style-type:none">
+                <input class="email-input-section" id="email-section" type="" placeholder=" ">
+                </li>
+              </div>
+              <div class="email-error" id="email-error"></div>
+                    
+              <div class="password-input">  
+                <label class="password">Password</label>
+                <li style="list-style-type:none">   
+                <input class="password-input-section" id="password-section" type="" placeholder=" ">
+                </li> 
+                <li style="list-style-type:none">
+                  <div class="password-error" value="text" for="name" id="password-error"></div>    
+                </li>                     
+              </div>
+              <h2 class="forgot-pwd-section">Forgot password?</h2>                          
+              <button class="submit-button" type="button" onclick="validator(page_name='login')">Login</button>
+              <div class=or-section>
+                <h3><span>OR</span></h3>
+              </div>  
+              <button class="facebook-button">Facebook</button>
+              <button class="google-button">Google</button>
+
+            </form>
+          </div>
+
+          <!-- signup page -->
+
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+
+            <form id=signup-page> 
+
+              <div class="name-input">   
+                <label class="name">Full Name</label>
+                <li style="list-style-type:none">
+                <input class="name-input-section" id="name-section" type="" placeholder=" ">
+                </li>
+              </div>
+              <div class="name-error" id="name-error"></div>
+                    
+              <div class="email-input">  
+                <label class="email">Email Id</label>
+                <li style="list-style-type:none">   
+                <input class="email-input-section" id="email-section" type="" placeholder=" ">
+                </li> 
+                <li style="list-style-type:none">
+                  <div class="email-error" value="text" for="name" id="email-error"></div>    
+                </li>                     
+              </div>
+              
+              <div class="password-input">  
+                <label class="password">Password</label>
+                <li style="list-style-type:none">   
+                <input class="password-input-section" id="password-section" type="" placeholder=" ">
+                </li> 
+                <li style="list-style-type:none">
+                  <div class="password-error" value="text" for="name" id="password-error"></div>    
+                </li>                     
+              </div>
+
+              <div class="phone-input">  
+                <label class="phone">Mobile Number</label>
+                <li style="list-style-type:none">   
+                <input class="phone-input-section" id="phone-section" type="" placeholder=" ">
+                </li>                                   
+              </div>
+              
+              <li style="list-style-type:none">
+                <div class="phone-error" value="text" for="name" id="phone-error"></div>    
+              </li>   
+              <div class="submit">
+              <button class="signup-submit-button" type="button" onclick="validator(form_id='signup-page')">signup</button>
+            </div>
+
+            </form>
+
+          </div>
+              
+          
+
+        </div>
+      </div>
+      
+    </div>
+  </div>
+  
+  <!-- script section -->
+  <script src="../js/validation.js"></script>
+
+</body>
+</html>
