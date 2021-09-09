@@ -27,7 +27,7 @@
       <!-- form section -->
 
       <div class="form-section">        
-        <nav>
+        <nav class="nav-section">
           <div class="nav nav-tabs" id="nav-tab" role="tablist">
             <a class="nav-link active" id="nav-home-tab" data-toggle="tab" href="#nav-home" role="tab" aria-controls="nav-home" aria-selected="true">LOGIN</a>              
             <a class="nav-link" id="nav-profile-tab" data-toggle="tab" href="#nav-profile" role="tab" aria-controls="nav-profile" aria-selected="false">SIGNUP</a>
@@ -44,7 +44,7 @@
               <div class="email-input">   
                 <label class="email">Email Id</label>
                 <li style="list-style-type:none">
-                <input class="email-input-section" id="email-section" type="" placeholder=" ">
+                <input class="email-input-section" id="email-section" type="" placeholder=" " autocomplete="off">
                 </li>
               </div>
               <div class="email-error" id="email-error"></div>
@@ -52,17 +52,17 @@
               <div class="password-input">  
                 <label class="password">Password</label>
                 <li style="list-style-type:none">   
-                <input class="password-input-section" id="password-section" type="" placeholder=" ">
+                <input class="password-input-section" id="password-section" type="" placeholder=" " autocomplete="off">
                 </li> 
                 <li style="list-style-type:none">
                   <div class="password-error" value="text" for="name" id="password-error"></div>    
                 </li>                     
               </div>
               <h2 class="forgot-pwd-section">Forgot password?</h2>                          
-              <button class="submit-button" type="button" onclick="validator(page_name='login')">Login</button>
+              <button class="submit-button" type="button" onclick="validateAndFetchData(function_name='login')">Login</button>
               <div class=or-section>
                 <h3><span>OR</span></h3>
-              </div>  
+              </div>    
               <button class="facebook-button">Facebook</button>
               <button class="google-button">Google</button>
 
@@ -71,14 +71,14 @@
 
           <!-- signup page -->
 
-          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">
+          <div class="tab-pane fade" id="nav-profile" role="tabpanel" aria-labelledby="nav-profile-tab">  
 
             <form id=signup-page> 
 
               <div class="name-input">   
                 <label class="name">Full Name</label>
                 <li style="list-style-type:none">
-                <input class="name-input-section" id="name-section" type="" placeholder=" ">
+                <input class="name-input-section" id="name-section" type="" placeholder=" " autocomplete="off">
                 </li>
               </div>
               <div class="name-error" id="name-error"></div>
@@ -86,27 +86,25 @@
               <div class="email-input">  
                 <label class="email">Email Id</label>
                 <li style="list-style-type:none">   
-                <input class="email-input-section" id="email-section" type="" placeholder=" ">
+                <input class="email-input-section" id="signup-email-section" type="" placeholder=" " autocomplete="off">
                 </li> 
-                <li style="list-style-type:none">
-                  <div class="email-error" value="text" for="name" id="email-error"></div>    
-                </li>                     
+                <div class="email-error" value="text" for="name" id="signup-email-error"></div>  
               </div>
               
               <div class="password-input">  
                 <label class="password">Password</label>
                 <li style="list-style-type:none">   
-                <input class="password-input-section" id="password-section" type="" placeholder=" ">
+                <input class="password-input-section" id="signup-password-section" type="" placeholder=" " autocomplete="off">
                 </li> 
                 <li style="list-style-type:none">
-                  <div class="password-error" value="text" for="name" id="password-error"></div>    
+                  <div class="password-error" value="text" for="name" id="signup-password-error"></div>    
                 </li>                     
               </div>
 
               <div class="phone-input">  
                 <label class="phone">Mobile Number</label>
                 <li style="list-style-type:none">   
-                <input class="phone-input-section" id="phone-section" type="" placeholder=" ">
+                <input class="phone-input-section" id="phone-section" type="" placeholder=" " autocomplete="off">
                 </li>                                   
               </div>
               
@@ -114,23 +112,21 @@
                 <div class="phone-error" value="text" for="name" id="phone-error"></div>    
               </li>   
               <div class="submit">
-              <button class="signup-submit-button" type="button" onclick="validator(form_id='signup-page')">signup</button>
+              <button class="signup-submit-button" type="button" onclick="validateAndFetchData(function_name='signup')">signup</button>
             </div>
 
             </form>
 
           </div>
-              
-          
-
         </div>
-      </div>
-      
+      </div>      
     </div>
   </div>
   
   <!-- script section -->
   <script src="../js/validation.js"></script>
+  <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+  <script src="../js/service.js"></script>
 
 </body>
 </html>

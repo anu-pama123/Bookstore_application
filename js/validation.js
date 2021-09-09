@@ -1,29 +1,54 @@
-function validator(page_name='') {
-    console.log(page_name)
+function validateAndFetchData(function_name='') {
+    const name = document.getElementById('name-section');
+    const email_id = document.getElementById('signup-email-section');
+    const password = document.getElementById('signup-password-section');
+    const phone = document.getElementById('phone-section');
 
-    if(page_name=="login") {
-        validateEmail();
-        validateEmptyEmail();
-        validatePassword();
-        validateEmptyPassword();
+    if(function_name=='login') {
+        const login_email = document.getElementById('email-section')
+        const login_password = document.getElementById('password-section')
+        validateLoginEmail();
+        validateLoginPassword();
+        let data = {
+            "email": login_email.value,
+            "password": login_password.value
+        }
+    postService("/bookstore_user/login", data, headerconfig)
+        .then(res=> {
+            console.log(res.data);                    
+                localStorage.setItem("token", res.data.result.accessToken);        
+        })  
+        .catch((err) => {
+            console.log(err);
+        }) 
     }
 
-
-    const form = document.getElementById('signup-page')
-    if(form_id=="signup-page"){
-        console.log('annnn')
-        validateEmail();
-        validateEmptyEmail();
-        validatePassword();
-        validateEmptyPassword();
+    if(function_name=='signup'){
+        validateSignupEmail();
+        validateSignupPassword();
         validateName();
+        validatePhone();
+        let data = {
+            "fullName": name.value,
+            "email": email_id.value,
+            "password": password.value,
+            "phone": phone.value
+        };
+        if (function_name === "signup") { 
+            postService("/bookstore_user/registration", data, headerconfig)
+                .then(res=> {
+                    console.log(res);        
+                })     
+                .catch((err) => {
+                    console.log(err);
+                }) 
+            } 
     }
 }
 
 //email validation
 
-function validateEmail() {
-    console.log('app')
+function validateLoginEmail() {
     const email = document.getElementById('email-section');
     const emailError = document.getElementById('email-error');
 
@@ -33,25 +58,29 @@ function validateEmail() {
     else emailError.textContent = "sorry, your user name must be between 6 and 30 character long";    
 };
 
-function validateEmptyEmail() { 
-    const email = document.getElementById('email-section');
-    const emailError = document.getElementById('email-error');
- 
-    if(email.value == "") emailError.textContent = "choose a gmail address";    
+function validateSignupEmail() {
+    const email = document.getElementById('signup-email-section');
+    const emailError = document.getElementById('signup-email-error');
+
+    let emailRegex = RegExp('^[a-zA-Z0-9]+([._+-][a-zA-Z0-9]+)*@[a-zA-Z0-9]+([.][a-zA-Z]{2,3}){1,2}$');
+    if (emailRegex.test(email.value))
+        emailError.textContent = "";
+    else emailError.textContent = "sorry, your user name must be between 6 and 30 character long";    
 };
 
-// password validation
-
-function validateEmptyPassword() {  
+function validateLoginPassword () {
     const pwd = document.getElementById('password-section');
     const pwdError = document.getElementById('password-error');
-    if(pwd.value == "") pwdError.textContent = "Enter a password";    
-};
+    let pwdRegex = RegExp('^[a-zA-Z@0-9]{6,}$');
+    if (pwdRegex.test(pwd.value))
+        pwdError.textContent = "";
+    else pwdError.textContent = "use 8 character or more for your password";        
+}
 
-function validatePassword () {
-    const pwd = document.getElementById('password-section');
-    const pwdError = document.getElementById('password-error');
-    let pwdRegex = RegExp('^[a-zA-Z0-9]{8,}$');
+function validateSignupPassword () {
+    const pwd = document.getElementById('signup-password-section');
+    const pwdError = document.getElementById('signup-password-error');
+    let pwdRegex = RegExp('^[a-zA-Z@0-9]{6,}$');
     if (pwdRegex.test(pwd.value))
         pwdError.textContent = "";
     else pwdError.textContent = "use 8 character or more for your password";        
@@ -66,4 +95,14 @@ function validateName() {
     if(name.value == "") nameError.textContent = "Enter your full name";        
 }
 
+// phone number validation
+
+function validatePhone() {
+    const phone = document.getElementById('phone-section');
+    const phnError = document.getElementById('phone-error');
+    let pwdRegex = RegExp('^[0-9]{10}$');
+    if (pwdRegex.test(phone.value))
+        phnError.textContent = "";
+    else phnError.textContent = "use 10 character or more for your phone number";
+}
 
