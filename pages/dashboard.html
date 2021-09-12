@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="../css/dashboard.css">
+</head>
+<body>
+    <div class="body-container">
+
+        <!-- --------------navbar section--------------- -->
+
+        <nav class="navbar navbar-light bg-light">
+            <div class="container-fluid">
+              <form class="d-flex">
+                <span class="nav-icon1">
+                    <img src="../assets/dashboard/education (1).svg">
+                </span>
+                <span class="nav-icon2">Bookstore</span>
+                <span class="search">
+                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                </span>
+                <span class="nav-icon4">
+                    <img src="../assets/dashboard/cart.png">
+                </span>
+              </form>
+            </div>
+        </nav>
+
+        <!-- ----------------main section--------------- -->
+
+        <div class="main-section">
+            <!-- <div class="main-section-heding">
+                <span class="heading1">Books(128 items)</span>
+                <span class="heading2">Sort by relevance</span>
+            </div> -->
+            <div class="main-section-container" id="item-container">
+            </div>
+        </div>
+
+        <!-- <div class="bottom-section">
+
+        </div> -->
+    </div>
+    <script src="../js/service.js"></script>
+    <script src="../js/dashboard.js"></script>
+</body>
+</html>

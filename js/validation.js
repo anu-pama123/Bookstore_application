@@ -106,3 +106,11 @@ function validatePhone() {
     else phnError.textContent = "use 10 character or more for your phone number";
 }
 
+// function changePage() {
+//     window.history.pushState('1signin', 'Title', 'http://127.0.0.1:5500/pages/1signin.html');
+// }
+
+// function changesigninPage() {
+//     window.history.pushState('1signin', 'Title', 'http://127.0.0.1:5500/pages/1login.html');
+// }
+
