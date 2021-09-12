@@ -1,3 +1,4 @@
+var axios = require("axios");
 function validateAndFetchData(function_name='') {
     const name = document.getElementById('name-section');
     const email_id = document.getElementById('signup-email-section');
