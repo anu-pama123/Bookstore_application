@@ -27,8 +27,7 @@
                             <h1 class="cart-title">My cart(1)</h1>
                         </div>
                         <div class="subsection2">
-                            <img src="../assets/dashboard/img1.png">
-                            <div class="title-section">data</div>
+                            <div class="title-section" id="place-order-section-cart-description">data</div>
                         </div>
                         <div class="subsection3">
                             <span class="minus-count">-</span>
@@ -56,8 +55,7 @@
                             <h1 class="cart-title">My cart(1)</h1>
                         </div>
                         <div class="subsection2">
-                            <img src="../assets/dashboard/img1.png">
-                            <div class="title-section">data</div>
+                            <div class="title-section" id="customer-details-section-cart-description">data</div>
                         </div>
                         <div class="subsection3">
                             <span class="minus-count">-</span>
@@ -88,18 +86,18 @@
                                 
             
                             <div class="floating-label-locality">      
-                                <input class="floating-input" id="locality-name"  type="" placeholder=" " autocomplete="off">
+                                <input class="floating-input" id="city"  type="" placeholder=" " autocomplete="off">
                                 <label>Locality</label>
                             </div>
                         </li> 
         
                         <div class="floating-label-address">      
-                            <input class="floating-input" id="email" type="email" placeholder=" " autocomplete="off">
+                            <input class="floating-input" id="address" type="email" placeholder=" " autocomplete="off">
                             <label>Address</label>
                         </div>
         
                         <div class="floating-label" type="pass">      
-                            <input class="floating-input" id="password" type="" placeholder=" " autocomplete="off">
+                            <input class="floating-input" id="state" type="" placeholder=" " autocomplete="off">
                             <label>city/town</label>
                         </div>
                         
@@ -116,7 +114,7 @@
                             <span class="other-section"><button class="other-button"></button>Other</span>
                         </li>
                         <div class="continue-button">
-                            <button class="continue-section" onclick="orderSummerySwitchVisible()">CONTINUE</button>
+                            <button class="continue-section" onclick="addCustomerDetails()" onclick="orderSummerySwitchVisible()">CONTINUE</button>
                         </div>
                     </div>
                     <div class="order-summery-section">
@@ -127,14 +125,12 @@
                 <!-- -------------order summery section------------- -->
 
                 <div class="order-summery" id="order-summery-page">
-                    <!-- <h1>Order summery</h1> -->
                     <div class="section1">
                         <div class="subsection1">
                             <h1 class="cart-title">My cart(1)</h1>
                         </div>
                         <div class="subsection2">
-                            <img src="../assets/dashboard/img1.png">
-                            <div class="title-section">data</div>
+                            <div class="order-summery-section-cart-description-section" id="order-summery-section-cart-description">data</div>
                         </div>
                         <div class="subsection3">
                             <span class="minus-count">-</span>
@@ -200,15 +196,8 @@
                     <div class="order-summery-section3">
                         <h1>Order summery</h1>
                         <div class="subsection2">
-                            <img src="../assets/dashboard/img1.png">
-                            <div class="title-section">data</div>
+                            <div class="title-section" id="order-summery-section-order-description">data</div>
                         </div>
-                        <div class="subsection3">
-                            <span class="minus-count">-</span>
-                            <span class="count">1</span>
-                            <span class="add-count">+</span>
-                            <span class="remove-section">Remove</span>    
-                        </div>  
                         <div class="button-container">
                             <button class="button-section" onclick="orderSuccessfulSwitchVisible()">CHECKOUT</button>
                         </div>
@@ -253,7 +242,14 @@
                 </div>
 
             </div>
-        <!-- <div id="footer-content" class="footer-section"></div> -->
+        </div>    
+
+        <!-- -----------------footer section----------------- -->
+
+        <div class="bottom-section">
+            <h1>copyright @ 2020,Bookstore Private Limited. All Rights Reserved</h1>
+        </div>
+            
     </div>
 
     
@@ -262,5 +258,6 @@
     <script src="../service/service.js"></script>
     <script src="../js/placeorder.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+
 </body>
 </html>

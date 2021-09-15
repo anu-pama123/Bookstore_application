@@ -63,7 +63,7 @@ function addtocartSwitchVisible(i) {
         'Content-Type': 'application/json',
         'x-access-token': localStorage.getItem('token')
         }
-      }
+    }
     let data = {
         "product_id": selectedBook._id
     }
@@ -118,4 +118,6 @@ function wishlistSwitchVisible(i) {
         }
     }
 }
+
+
 
