@@ -18,7 +18,39 @@
         <div id=header-content class="header-section"></div>
         <div class="main-section">            
             <div class="main-section-container" id="item-container">
-                <div class="place-order-section">
+
+                <!-- ------------place order section------------ -->
+
+                <div class="place-order-section" id="place-order-page">
+                    <div class="section1">
+                        <div class="subsection1">
+                            <h1 class="cart-title">My cart(1)</h1>
+                        </div>
+                        <div class="subsection2">
+                            <img src="../assets/dashboard/img1.png">
+                            <div class="title-section">data</div>
+                        </div>
+                        <div class="subsection3">
+                            <span class="minus-count">-</span>
+                            <span class="count">1</span>
+                            <span class="add-count">+</span>
+                            <span class="remove-section">Remove</span>    
+                        </div>  
+                        <div class="button-container">
+                            <button class="button-section" onclick="placeorderSwitchVisible()">PLACE ORDER</button>
+                        </div>
+                    </div>
+                    <div class="section2">
+                    <h2>Customer Details</h2>
+                    </div>
+                    <div class="section3">
+                        <h3>Order summery</h3>
+                    </div>
+                </div>  
+                
+                <!-- ----------customer details section------------- -->
+
+                <div class="customer-details" id="customer-details-page">
                     <div class="section1">
                         <div class="subsection1">
                             <h1 class="cart-title">My cart(1)</h1>
@@ -37,20 +69,198 @@
                             <button class="button-section">PLACE ORDER</button>
                         </div>
                     </div>
-                    <div class="section2">
-                    <h2>Customer Details</h2>
+                    <div class="customer-details-section2">
+                        <h1>Customer Details</h1>
+                        <div class="floating-label-name">      
+                            <input class="floating-input" id="first-name" type="" placeholder=" " autocomplete="off">
+                            <label>Name</label>
+                        </div>               
+        
+                        <div class="floating-label-name">      
+                            <input class="floating-input" id="last-name"  type="" placeholder=" " autocomplete="off">
+                            <label>Phone Number</label>
+                        </div>
+                        <li style="list-style-type: none;">
+                            <div class="floating-label-locality">      
+                                <input class="floating-input" id="pincode" type="" placeholder=" " autocomplete="off">
+                                <label>Pincode</label>
+                            </div>  
+                                
+            
+                            <div class="floating-label-locality">      
+                                <input class="floating-input" id="locality-name"  type="" placeholder=" " autocomplete="off">
+                                <label>Locality</label>
+                            </div>
+                        </li> 
+        
+                        <div class="floating-label-address">      
+                            <input class="floating-input" id="email" type="email" placeholder=" " autocomplete="off">
+                            <label>Address</label>
+                        </div>
+        
+                        <div class="floating-label" type="pass">      
+                            <input class="floating-input" id="password" type="" placeholder=" " autocomplete="off">
+                            <label>city/town</label>
+                        </div>
+                        
+                        <div class="floating-label" type="pass">      
+                            <input class="floating-input" id="submit-password" type="" placeholder=" " autocomplete="off">
+                            <label>Landmark</label>
+                        </div>
+                        <li style="list-style-type: none;" class="type-section-container">
+                            Type
+                        </li>
+                        <li style="list-style-type: none;" class="type-section">
+                            <span class="home-section"><button class="home-button"></button>Home</span>
+                            <span class="work-section"><button class="work-button"></button>Work</span>
+                            <span class="other-section"><button class="other-button"></button>Other</span>
+                        </li>
+                        <div class="continue-button">
+                            <button class="continue-section" onclick="orderSummerySwitchVisible()">CONTINUE</button>
+                        </div>
                     </div>
-                    <div class="section3">
-                        <h3>Order summery</h3>
+                    <div class="order-summery-section">
+                        <h1>Order summery</h1>
+                    </div>    
+                </div>
+
+                <!-- -------------order summery section------------- -->
+
+                <div class="order-summery" id="order-summery-page">
+                    <!-- <h1>Order summery</h1> -->
+                    <div class="section1">
+                        <div class="subsection1">
+                            <h1 class="cart-title">My cart(1)</h1>
+                        </div>
+                        <div class="subsection2">
+                            <img src="../assets/dashboard/img1.png">
+                            <div class="title-section">data</div>
+                        </div>
+                        <div class="subsection3">
+                            <span class="minus-count">-</span>
+                            <span class="count">1</span>
+                            <span class="add-count">+</span>
+                            <span class="remove-section">Remove</span>    
+                        </div>  
+                        <div class="button-container">
+                            <button class="button-section">PLACE ORDER</button>
+                        </div>
                     </div>
-                </div>    
+                    <div class="customer-details-section2">
+                        <h1>Customer Details</h1>
+                        <div class="floating-label-name">      
+                            <input class="floating-input" id="first-name" type="" placeholder=" " autocomplete="off">
+                            <label>Name</label>
+                        </div>               
+        
+                        <div class="floating-label-name">      
+                            <input class="floating-input" id="last-name"  type="" placeholder=" " autocomplete="off">
+                            <label>Phone Number</label>
+                        </div>
+                        <li style="list-style-type: none;">
+                            <div class="floating-label-locality">      
+                                <input class="floating-input" id="pincode" type="" placeholder=" " autocomplete="off">
+                                <label>Pincode</label>
+                            </div>  
+                                
+            
+                            <div class="floating-label-locality">      
+                                <input class="floating-input" id="locality-name"  type="" placeholder=" " autocomplete="off">
+                                <label>Locality</label>
+                            </div>
+                        </li> 
+        
+                        <div class="floating-label-address">      
+                            <input class="floating-input" id="email" type="email" placeholder=" " autocomplete="off">
+                            <label>Address</label>
+                        </div>
+        
+                        <div class="floating-label" type="pass">      
+                            <input class="floating-input" id="password" type="" placeholder=" " autocomplete="off">
+                            <label>city/town</label>
+                        </div>
+                        
+                        <div class="floating-label" type="pass">      
+                            <input class="floating-input" id="submit-password" type="" placeholder=" " autocomplete="off">
+                            <label>Landmark</label>
+                        </div>
+                        <li style="list-style-type: none;" class="type-section-container">
+                            Type
+                        </li>
+                        <li style="list-style-type: none;" class="type-section">
+                            <span class="home-section"><button class="home-button"></button>Home    </span>
+                            <span class="work-section"><button class="work-button"></button>Work</span>
+                            <span class="other-section"><button class="other-button"></button>Other</span>
+                        </li>
+                        <div class="continue-button">
+                            <button class="continue-section">CONTINUE</button>
+                        </div>
+                
+                    </div>
+                    <div class="order-summery-section3">
+                        <h1>Order summery</h1>
+                        <div class="subsection2">
+                            <img src="../assets/dashboard/img1.png">
+                            <div class="title-section">data</div>
+                        </div>
+                        <div class="subsection3">
+                            <span class="minus-count">-</span>
+                            <span class="count">1</span>
+                            <span class="add-count">+</span>
+                            <span class="remove-section">Remove</span>    
+                        </div>  
+                        <div class="button-container">
+                            <button class="button-section" onclick="orderSuccessfulSwitchVisible()">CHECKOUT</button>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- -------------order placed section-------------- -->
+
+                <div class="order-placed" id="order-placed-section">
+                    <div class="order-placed-section-container">
+                        <div class="order-placed-section1">
+                            <img src="../assets/dashboard/order.png">
+                        </div>
+                        <div class="order-placed-section2">
+                            <h1>Order Placed Successfully</h1>
+                        </div>
+                        <div class="order-placed-section3">
+                            <img src="../assets/dashboard/order2.png">
+                        </div>
+                        <div class="order-placed-section4">
+                            <p>hurray!!! your order is confirmed the order id is #123456 save the order id for further communication..</p>
+                        </div>
+                        <div class="order-placed-section5">
+                            <table>
+                                <tr>
+                                <th class="section5-email">Email us</th>
+                                <th class="section5-contact">Contact us</th>
+                                <th class="section5-address">Address</th>
+                                </tr>
+                                <tr>
+                                  <td class="email-value">admin@bookstore.com</td>
+                                  <td class="contact-value">+91 8163475881</td>
+                                  <td class="address-value">42, 14th Main, 15th Cross, Sector 4 ,opp to BDA complex, near Kumarakom restaurant, HSR Layout, Bangalore 560034</td>
+                                </tr>
+                                
+                              </table>
+                        </div>
+                        <div class="order-placed-section6">
+                            <button class="order-placed-button">CONTINUE SHOPPING</button>
+                        </div>
+                    </div>    
+                </div>
+
             </div>
-        </div>
-        <div id="footer-content" class="footer-section"></div>
+        <!-- <div id="footer-content" class="footer-section"></div> -->
     </div>
 
     
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
+    <script src="../service/service.js"></script>
+    <script src="../js/placeorder.js"></script>
+    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
 </body>
 </html>

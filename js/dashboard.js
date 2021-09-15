@@ -12,6 +12,9 @@ window.addEventListener('DOMContentLoaded', (event) => {
 });
   
 function displayItems() {
+    const headerconfig = {   
+        'Content-Type': 'application/json',
+      };
     getService("​/bookstore_user/get/book", headerconfig)
     .then(res=> {
         console.log(res.data.result);
@@ -55,6 +58,23 @@ function displayItems() {
 
 function addtocartSwitchVisible(i) {
     let selectedBook = bookDetailsList[i];
+    const headerconfig = { 
+        headers: {  
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+        }
+      }
+    let data = {
+        "product_id": selectedBook._id
+    }
+    
+    postService("/bookstore_user/add_cart_item/"+ selectedBook._id +"", data, headerconfig)
+        .then(res=> {
+            console.log(res);                           
+        })  
+        .catch((err) => {
+            console.log(err);
+        }); 
     if (document.getElementById('button-outer-section'+selectedBook._id)) {
         if (document.getElementById('button-outer-section'+selectedBook._id).style.display == 'none') {
             document.getElementById('button-outer-section'+selectedBook._id).style.display = 'block';
@@ -65,17 +85,28 @@ function addtocartSwitchVisible(i) {
             document.getElementById('add-cart-section'+selectedBook._id).style.display = 'block';
         }
     }
-    postService("/bookstore_user/add_cart_item/"+ selectedBook._id +"", headerconfig)
-        .then(res=> {
-            console.log(res.data);                           
-        })  
-        .catch((err) => {
-            console.log(err);
-        }) 
 }
 
 function wishlistSwitchVisible(i) {
     let selectedBook = bookDetailsList[i];
+    const headerconfig = { 
+        headers: {  
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+        }
+      }
+    let data = {
+        "product_id": selectedBook._id
+    }
+    
+    postService("/bookstore_user/add_wish_list/"+ selectedBook._id +"", data, headerconfig)
+        .then(res=> {
+            console.log(res);                           
+        })  
+        .catch((err) => {
+            console.log(err);
+        }); 
+    
     if (document.getElementById('button-outer-section'+selectedBook._id)) {
         if (document.getElementById('button-outer-section'+selectedBook._id).style.display == 'none') {
             document.getElementById('button-outer-section'+selectedBook._id).style.display = 'block';
@@ -86,11 +117,5 @@ function wishlistSwitchVisible(i) {
             document.getElementById('wishlist-section'+selectedBook._id).style.display = 'block';
         }
     }
-    postService("/bookstore_user/add_wish_list/"+ selectedBook._id +"")
-        .then(res=> {
-            console.log(res.data);                         
-        })  
-        .catch((err) => {
-            console.log(err);
-        }) 
 }
+

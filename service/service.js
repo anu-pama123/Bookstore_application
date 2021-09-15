@@ -1,8 +1,8 @@
 const baseurl = "https://new-bookstore-backend.herokuapp.com";
-const headerconfig = {   
-  'Content-Type': 'application/json',
-  'authorization': localStorage.getItem('token')
-};
+// const headerconfig = {   
+//   'Content-Type': 'application/json',
+//   'authorization': localStorage.getItem('token')
+// };
 
 function postService(urlPostfix, data, headerconfig) {   
 

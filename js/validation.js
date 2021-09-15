@@ -10,11 +10,15 @@ function validateAndFetchData(function_name='') {
         const login_password = document.getElementById('password-section')
         validateLoginEmail();
         validateLoginPassword();
+        const headerconfig = {   
+            'Content-Type': 'application/json',
+            // 'authorization': localStorage.getItem('token')
+          };
         let data = {
             "email": login_email.value,
             "password": login_password.value
         }
-    postService("/bookstore_user/login", data, headerconfig)
+        postService("/bookstore_user/login", data, headerconfig)
         .then(res=> {
             console.log(res.data);                    
                 localStorage.setItem("token", res.data.result.accessToken);        
@@ -29,6 +33,10 @@ function validateAndFetchData(function_name='') {
         validateSignupPassword();
         validateName();
         validatePhone();
+        const headerconfig = {   
+            'Content-Type': 'application/json',
+            // 'authorization': localStorage.getItem('token')
+          };
         let data = {
             "fullName": name.value,
             "email": email_id.value,
