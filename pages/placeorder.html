@@ -10,7 +10,6 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/header.css">
-    <link rel="stylesheet" href="../css/footer.css">
     <link rel="stylesheet" href="../css/placeorder.css">
 </head>
 <body>
@@ -18,192 +17,7 @@
         <div id=header-content class="header-section"></div>
         <div class="main-section">            
             <div class="main-section-container" id="item-container">
-
-                <!-- ------------place order section------------ -->
-
-                <div class="place-order-section" id="place-order-page">
-                    <div class="section1">
-                        <div class="subsection1">
-                            <h1 class="cart-title">My cart(1)</h1>
-                        </div>
-                        <div class="subsection2">
-                            <div class="title-section" id="place-order-section-cart-description">data</div>
-                        </div>
-                        <div class="subsection3">
-                            <span class="minus-count">-</span>
-                            <span class="count">1</span>
-                            <span class="add-count">+</span>
-                            <span class="remove-section">Remove</span>    
-                        </div>  
-                        <div class="button-container">
-                            <button class="button-section" onclick="placeorderSwitchVisible()">PLACE ORDER</button>
-                        </div>
-                    </div>
-                    <div class="section2">
-                    <h2>Customer Details</h2>
-                    </div>
-                    <div class="section3">
-                        <h3>Order summery</h3>
-                    </div>
-                </div>  
                 
-                <!-- ----------customer details section------------- -->
-
-                <div class="customer-details" id="customer-details-page">
-                    <div class="section1">
-                        <div class="subsection1">
-                            <h1 class="cart-title">My cart(1)</h1>
-                        </div>
-                        <div class="subsection2">
-                            <div class="title-section" id="customer-details-section-cart-description">data</div>
-                        </div>
-                        <div class="subsection3">
-                            <span class="minus-count">-</span>
-                            <span class="count">1</span>
-                            <span class="add-count">+</span>
-                            <span class="remove-section">Remove</span>    
-                        </div>  
-                        <div class="button-container">
-                            <button class="button-section">PLACE ORDER</button>
-                        </div>
-                    </div>
-                    <div class="customer-details-section2">
-                        <h1>Customer Details</h1>
-                        <div class="floating-label-name">      
-                            <input class="floating-input" id="first-name" type="" placeholder=" " autocomplete="off">
-                            <label>Name</label>
-                        </div>               
-        
-                        <div class="floating-label-name">      
-                            <input class="floating-input" id="last-name"  type="" placeholder=" " autocomplete="off">
-                            <label>Phone Number</label>
-                        </div>
-                        <li style="list-style-type: none;">
-                            <div class="floating-label-locality">      
-                                <input class="floating-input" id="pincode" type="" placeholder=" " autocomplete="off">
-                                <label>Pincode</label>
-                            </div>  
-                                
-            
-                            <div class="floating-label-locality">      
-                                <input class="floating-input" id="city"  type="" placeholder=" " autocomplete="off">
-                                <label>Locality</label>
-                            </div>
-                        </li> 
-        
-                        <div class="floating-label-address">      
-                            <input class="floating-input" id="address" type="email" placeholder=" " autocomplete="off">
-                            <label>Address</label>
-                        </div>
-        
-                        <div class="floating-label" type="pass">      
-                            <input class="floating-input" id="state" type="" placeholder=" " autocomplete="off">
-                            <label>city/town</label>
-                        </div>
-                        
-                        <div class="floating-label" type="pass">      
-                            <input class="floating-input" id="submit-password" type="" placeholder=" " autocomplete="off">
-                            <label>Landmark</label>
-                        </div>
-                        <li style="list-style-type: none;" class="type-section-container">
-                            Type
-                        </li>
-                        <li style="list-style-type: none;" class="type-section">
-                            <span class="home-section"><button class="home-button"></button>Home</span>
-                            <span class="work-section"><button class="work-button"></button>Work</span>
-                            <span class="other-section"><button class="other-button"></button>Other</span>
-                        </li>
-                        <div class="continue-button">
-                            <button class="continue-section" onclick="addCustomerDetails()" onclick="orderSummerySwitchVisible()">CONTINUE</button>
-                        </div>
-                    </div>
-                    <div class="order-summery-section">
-                        <h1>Order summery</h1>
-                    </div>    
-                </div>
-
-                <!-- -------------order summery section------------- -->
-
-                <div class="order-summery" id="order-summery-page">
-                    <div class="section1">
-                        <div class="subsection1">
-                            <h1 class="cart-title">My cart(1)</h1>
-                        </div>
-                        <div class="subsection2">
-                            <div class="order-summery-section-cart-description-section" id="order-summery-section-cart-description">data</div>
-                        </div>
-                        <div class="subsection3">
-                            <span class="minus-count">-</span>
-                            <span class="count">1</span>
-                            <span class="add-count">+</span>
-                            <span class="remove-section">Remove</span>    
-                        </div>  
-                        <div class="button-container">
-                            <button class="button-section">PLACE ORDER</button>
-                        </div>
-                    </div>
-                    <div class="customer-details-section2">
-                        <h1>Customer Details</h1>
-                        <div class="floating-label-name">      
-                            <input class="floating-input" id="first-name" type="" placeholder=" " autocomplete="off">
-                            <label>Name</label>
-                        </div>               
-        
-                        <div class="floating-label-name">      
-                            <input class="floating-input" id="last-name"  type="" placeholder=" " autocomplete="off">
-                            <label>Phone Number</label>
-                        </div>
-                        <li style="list-style-type: none;">
-                            <div class="floating-label-locality">      
-                                <input class="floating-input" id="pincode" type="" placeholder=" " autocomplete="off">
-                                <label>Pincode</label>
-                            </div>  
-                                
-            
-                            <div class="floating-label-locality">      
-                                <input class="floating-input" id="locality-name"  type="" placeholder=" " autocomplete="off">
-                                <label>Locality</label>
-                            </div>
-                        </li> 
-        
-                        <div class="floating-label-address">      
-                            <input class="floating-input" id="email" type="email" placeholder=" " autocomplete="off">
-                            <label>Address</label>
-                        </div>
-        
-                        <div class="floating-label" type="pass">      
-                            <input class="floating-input" id="password" type="" placeholder=" " autocomplete="off">
-                            <label>city/town</label>
-                        </div>
-                        
-                        <div class="floating-label" type="pass">      
-                            <input class="floating-input" id="submit-password" type="" placeholder=" " autocomplete="off">
-                            <label>Landmark</label>
-                        </div>
-                        <li style="list-style-type: none;" class="type-section-container">
-                            Type
-                        </li>
-                        <li style="list-style-type: none;" class="type-section">
-                            <span class="home-section"><button class="home-button"></button>Home    </span>
-                            <span class="work-section"><button class="work-button"></button>Work</span>
-                            <span class="other-section"><button class="other-button"></button>Other</span>
-                        </li>
-                        <div class="continue-button">
-                            <button class="continue-section">CONTINUE</button>
-                        </div>
-                
-                    </div>
-                    <div class="order-summery-section3">
-                        <h1>Order summery</h1>
-                        <div class="subsection2">
-                            <div class="title-section" id="order-summery-section-order-description">data</div>
-                        </div>
-                        <div class="button-container">
-                            <button class="button-section" onclick="orderSuccessfulSwitchVisible()">CHECKOUT</button>
-                        </div>
-                    </div>
-                </div>
-
                 <!-- -------------order placed section-------------- -->
 
                 <div class="order-placed" id="order-placed-section">
@@ -240,24 +54,16 @@
                         </div>
                     </div>    
                 </div>
-
             </div>
-        </div>    
+        </div>
 
         <!-- -----------------footer section----------------- -->
 
         <div class="bottom-section">
             <h1>copyright @ 2020,Bookstore Private Limited. All Rights Reserved</h1>
         </div>
-            
     </div>
-
     
     <script src="../js/header.js"></script>
-    <script src="../js/footer.js"></script>
-    <script src="../service/service.js"></script>
-    <script src="../js/placeorder.js"></script>
-    <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
-
 </body>
-</html>
+</html>                

@@ -18,7 +18,7 @@ function displayItems() {
     getService("​/bookstore_user/get/book", headerconfig)
     .then(res=> {
         console.log(res.data.result);
-        // console.log(res.data.result._id);
+        console.log(res.data.result.length);
     let itemsHTML=``;
     bookDetailsList = res.data.result;
     for(let i=0; i<res.data.result.length; i++) {
@@ -119,5 +119,30 @@ function wishlistSwitchVisible(i) {
     }
 }
 
+
+window.addEventListener('DOMContentLoaded', (event) => {
+    getCartItemsInDashboard();
+});
+
+function getCartItemsInDashboard() {
+    const headerconfig = { 
+        headers: {  
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+        }
+    }
+    getService("​/bookstore_user/get_cart_items", headerconfig)
+    .then(res=> {
+        console.log(res.data.result);
+        console.log(res.data.result.length);
+        // let cartItemList = res.data.result;
+        let itemCountHTML=``;
+        itemCountHTML += `<div class="cart-item-count-in-dashboard">`+ res.data.result.length +
+        
+                         `</div>`                         
+        document.getElementById("dashboard-page-cart-item-count").innerHTML = itemCountHTML;
+    })
+    
+}    
 
 

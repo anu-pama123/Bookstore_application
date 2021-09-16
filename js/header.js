@@ -9,9 +9,12 @@ document.getElementById("header-content").innerHTML = `
     <span class="search">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </span>
+    
     <span class="nav-icon4">
-        <img src="../assets/dashboard/cart.png">
+      <img src="../assets/dashboard/cart.png">
     </span>
+    <span class="nav-section-cart-count" id="nav-section-cart-icon"></span>
+    
   </form>
 </div>
 </nav>

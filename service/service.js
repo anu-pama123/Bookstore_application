@@ -35,3 +35,16 @@ function putService(urlPostfix, data, headerconfig) {
   })
 
 }
+
+// -------------------delete method------------------
+
+function deleteService(urlPostfix, data, headerconfig) {   
+
+  console.log(urlPostfix, data, headerconfig);
+  return new Promise (function(resolve, reject) {
+    data.headers = headerconfig.headers
+    var resolved = axios.delete(baseurl+urlPostfix, data, headerconfig);
+    resolve(resolved);
+  })
+
+}
