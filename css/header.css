@@ -30,7 +30,7 @@
 
 .nav-icon4 {
     padding-top: 15px;
-    padding-left: 320px;
+    padding-left: 50px;
 }
 
 .search {
@@ -39,3 +39,9 @@
     width: 500px;
     
 }
+
+.fa-user-o {
+    color: white !important;
+    padding-top: 20px;
+    padding-left: 200px;
+} 

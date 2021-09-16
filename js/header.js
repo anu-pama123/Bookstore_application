@@ -9,7 +9,7 @@ document.getElementById("header-content").innerHTML = `
     <span class="search">
     <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
     </span>
-    
+    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
     <span class="nav-icon4">
       <img src="../assets/dashboard/cart.png">
     </span>

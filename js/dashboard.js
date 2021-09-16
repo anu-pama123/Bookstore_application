@@ -135,7 +135,6 @@ function getCartItemsInDashboard() {
     .then(res=> {
         console.log(res.data.result);
         console.log(res.data.result.length);
-        // let cartItemList = res.data.result;
         let itemCountHTML=``;
         itemCountHTML += `<div class="cart-item-count-in-dashboard">`+ res.data.result.length +
         
