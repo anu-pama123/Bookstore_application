@@ -1,13 +1,5 @@
 let cartItemList = [];
 
-const imageList = ["../assets/dashboard/img1.png", "../assets/dashboard/img2.png", "../assets/dashboard/img3.png",
-                   "../assets/dashboard/img4.png", "../assets/dashboard/img5.png", "../assets/dashboard/img6.png",
-                   "../assets/dashboard/img7.png", "../assets/dashboard/img8.png", "../assets/dashboard/img9.png",
-                   "../assets/dashboard/img10.png", "../assets/dashboard/img11.png", "../assets/dashboard/img12.png",
-                   "../assets/dashboard/img7.png", "../assets/dashboard/img8.png", "../assets/dashboard/img9.png",
-                   "../assets/dashboard/img2.png"
-                    ];
-
 function placeorderSwitchVisible() {
     if (document.getElementById('place-order-page')) {
 
@@ -36,23 +28,11 @@ function orderSummerySwitchVisible() {
     }
 }  
 
-// function orderSuccessfulSwitchVisible() {
-//     if (document.getElementById('order-summery-page')) {
-
-//         if (document.getElementById('order-summery-page').style.display == 'none') {
-//             document.getElementById('order-summery-page').style.display = 'block';
-//             document.getElementById('order-placed-section').style.display = 'none';
-//         }
-//         else {
-//             document.getElementById('order-summery-page').style.display = 'none';
-//             document.getElementById('order-placed-section').style.display = 'block';
-//         }
-//     }
-// }  
-
 window.addEventListener('DOMContentLoaded', (event) => {
     getCartItems();
 });
+
+// --------------method to get cart items-----------------
 
 function getCartItems() {
     const headerconfig = { 
@@ -76,7 +56,7 @@ function getCartItems() {
             cartItemsHTML +=    `<div class="cart-item-section">`+
                                 `<div class="image-and-description">`+
                                     `<div class="cart-image-item">`+
-                                        `<img src="`+imageList[i]+`">`+
+                                        `<img src="../assets/dashboard/img2.png">`+
                                     `</div>` +  
                                     `<div class="cart-item-title">`+ res.data.result[i].product_id.bookName +`
                                         <li style="list-style: none" class="title2">`+ res.data.result[i].product_id.author +`</li>
@@ -219,4 +199,8 @@ function decreaseCartItem(i) {
         console.log(res.data.result);
         getCartItems();
     })
+}
+
+function redirectToPlaceorderPage() {
+    window.location.replace('../pages/placeorder.html');
 }

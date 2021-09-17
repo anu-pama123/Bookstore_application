@@ -167,6 +167,15 @@ table, td {
         width: 21%;
     }
 
+    .body-container {
+        overflow-x: hidden !important;
+    }
+
+    .order-placed-section4 p {
+        padding-left: 150px;
+        padding-right: 150px;
+    }
+
     .search {
         padding-top: 10px;
         padding-left: 45px;
@@ -183,7 +192,15 @@ table, td {
     
     .nav-icon4 {
         padding-top: 15px;
-        padding-left: 80px !important;
+        padding-left: 30px !important;
+    }
+
+    .fa-user-o {
+        padding-left: 100px;
+    }
+
+    .order-placed-section5 {
+        width: 80%;
     }
     
     .cart-item-count-in-dashboard {
@@ -229,4 +246,46 @@ table, td {
     .floating-input[type="email"] {
         width: 212px !important;
     }
+
+    .placeorder-nav-section-cart-count {
+        width: 4%;
+        padding-left: 3px;
+    }
 }
+
+@media only screen and (max-width: 600px) {
+    .search {
+        display: none;
+    }
+    .nav-icon4 {
+        padding-left: 50px !important;
+    }
+
+    .fa-user-o {
+        padding-left: 280px;
+    }
+    .placeorder-nav-section-cart-count {
+        width: 8%;
+        padding-left: 3px;
+    }
+}   
+
+@media only screen and (max-width: 500px) {
+    .nav-icon4 {
+        padding-left: 50px !important;
+    }
+
+    .fa-user-o {
+        padding-left: 180px;
+    }
+} 
+
+@media only screen and (max-width: 400px) {
+    .nav-icon4 {
+        padding-left: 50px !important;
+    }
+
+    .fa-user-o {
+        padding-left: 140px;
+    }
+} 

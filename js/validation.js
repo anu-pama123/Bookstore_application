@@ -1,4 +1,5 @@
 var axios = require("axios");
+
 function validateAndFetchData(function_name='') {
     const name = document.getElementById('name-section');
     const email_id = document.getElementById('signup-email-section');
@@ -21,7 +22,8 @@ function validateAndFetchData(function_name='') {
         postService("/bookstore_user/login", data, headerconfig)
         .then(res=> {
             console.log(res.data);                    
-                localStorage.setItem("token", res.data.result.accessToken);        
+                localStorage.setItem("token", res.data.result.accessToken);  
+                window.location.replace('../pages/dashboard.html');      
         })  
         .catch((err) => {
             console.log(err);

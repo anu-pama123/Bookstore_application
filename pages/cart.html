@@ -29,7 +29,7 @@
                             <span id="place-order-section-cart-count"></span>
                         </div>
                         <div class="subsection2">
-                            <div class="title-section" id="place-order-section-cart-description">data</div>
+                            <div class="title-section" id="place-order-section-cart-description"></div>
                         </div>
                         <div class="button-container">
                             <button class="button-section" onclick="placeorderSwitchVisible()">PLACE ORDER</button>
@@ -45,6 +45,8 @@
                 <div class="customer-details" id="customer-details-page">
                     <div class="customer-details-section2">
                         <h1>Customer Details</h1>
+                        <div class=input-section-container>
+            
                         <div class="floating-label-name">      
                             <input class="floating-input" id="first-name" type="" placeholder=" " autocomplete="off">
                             <label>Name</label>
@@ -81,6 +83,8 @@
                             <input class="floating-input" id="submit-password" type="" placeholder=" " autocomplete="off">
                             <label>Landmark</label>
                         </div>
+
+                    </div>    
                         <li style="list-style-type: none;" class="type-section-container">
                             Type
                         </li>
@@ -101,10 +105,10 @@
                     <div class="order-summery-section3">
                         <h1>Order summery</h1>
                         <div class="subsection2">
-                            <div class="title-section" id="order-summery-section-order-description">data</div>
+                            <div class="title-section" id="order-summery-section-order-description"></div>
                         </div>
                         <div class="button-container">
-                            <button class="button-section" onclick="addOrder(), orderSuccessfulSwitchVisible()">CHECKOUT</button>
+                            <button class="button-section" onclick="addOrder(), redirectToPlaceorderPage()">CHECKOUT</button>
                         </div>
                     </div>
                 </div>

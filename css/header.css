@@ -2,7 +2,7 @@
     background: #A03037 0% 0% no-repeat padding-box !important;
     opacity: 1;
     height: 10% !important;
-    position: fixed !important;
+    position: absolute !important;
     width: 100%;
 }
 
@@ -45,3 +45,71 @@
     padding-top: 20px;
     padding-left: 200px;
 } 
+
+.nav-section-cart-count {
+    width: 2%;
+    height: 19px;
+    border-radius: 25px;
+    background-color: white;
+    color: #A03037;
+    padding-left: 2px;
+}
+
+/* ------------dropdown section styling--------------- */
+
+.dropdown-toggle {
+    border: none !important;
+    background-color: inherit !important;    
+}
+
+.dropdown-toggle:focus {
+    border: none !important;
+}
+
+.btn {
+    padding: 0px !important;
+}
+
+.btn:focus {
+    outline: none;
+    box-shadow: none;
+    border-color: inherit !important;
+  }
+
+.dropdown-toggle::after {
+    display: none;
+} 
+
+.dropdown-menu[data-bs-popper] {
+    left: 32%;
+    top: 50px;
+}
+
+.dropdown-item {
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #878787;
+    opacity: 1;
+    background: hsl(0, 0%, 100%) 0% 0% no-repeat padding-box;
+    opacity: 1;
+    padding-left: 25px;
+}
+
+.logout-button {
+    background: #FFFFFF 0% 0% no-repeat padding-box;
+    opacity: 1;
+    font-family: Roboto;
+    border-color: #A03037;
+    color: #A03037;
+    width: 80%;
+}
+
+.profile-button {
+    padding-left: 6px;
+}
+
+
+
+
+  

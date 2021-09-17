@@ -14,7 +14,28 @@
 </head>
 <body>
     <div class="body-container">
-        <div id=header-content class="header-section"></div>
+        <div id=header-content class="header-section">
+            <nav class="navbar navbar-light bg-light">
+                <div class="container-fluid">
+                  <form class="d-flex">
+                    <span class="nav-icon1">
+                        <img src="../assets/dashboard/education (1).svg">
+                    </span>
+                    <span class="nav-icon2">Bookstore</span>
+                    <span class="search">
+                    <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                    </span>
+                    <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
+                    <span class="nav-icon4">
+                      <img src="../assets/dashboard/cart.png" onclick="redirectdashboardToCart()">
+                    </span>                    
+                    <span class="placeorder-nav-section-cart-count" id="nav-section-cart-icon">
+                    </span>
+                    
+                  </form>
+                </div>
+                </nav>
+        </div>
         <div class="main-section">            
             <div class="main-section-container" id="item-container">
                 
@@ -35,7 +56,7 @@
                             <p>hurray!!! your order is confirmed the order id is #123456 save the order id for further communication..</p>
                         </div>
                         <div class="order-placed-section5">
-                            <table>
+                            <table class="table-section">
                                 <tr>
                                 <th class="section5-email">Email us</th>
                                 <th class="section5-contact">Contact us</th>
@@ -50,7 +71,7 @@
                               </table>
                         </div>
                         <div class="order-placed-section6">
-                            <button class="order-placed-button">CONTINUE SHOPPING</button>
+                            <button class="order-placed-button" onclick="redirectplaceorderSectionToSignup()">CONTINUE SHOPPING</button>
                         </div>
                     </div>    
                 </div>
@@ -64,6 +85,6 @@
         </div>
     </div>
     
-    <script src="../js/header.js"></script>
+    <script src="../js/dashboard.js"></script>
 </body>
 </html>                
