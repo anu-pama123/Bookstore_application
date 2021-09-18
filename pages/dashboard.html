@@ -36,7 +36,9 @@
                             <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
                             </button>
                             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="#">Hello</a></li>
+                              <li><a class="dropdown-item" href="#"><span class="Hello-button">Hello</span>
+                                <span id="user-name-section" class="user-name"></span>
+                                ,</a></li>
                               <li><a class="dropdown-item" href="#">
                                 <i class="fa fa-user" aria-hidden="true"></i>
                                 <span class="profile-button">profile</span></a>
@@ -50,7 +52,7 @@
                                 <span class="profile-button" onclick="redirectdashboardToWishlist()">My Wishlist</span></a>
                               </li>
                               <li><a class="dropdown-item" href="#">
-                                <button class="logout-button" onclick="clearAccount()" onclick="redirectlogoutSectionToSignup()" >Logout</button>
+                                <button class="logout-button" onclick="clearAccount()" >Logout</button>
                               </a></li>
                             </ul>
                           </div>
@@ -67,16 +69,15 @@
                 </nav>
               
         </div>
-
+        
         <!-- ----------------main section--------------- -->
 
         <div class="main-section">
-            <!-- <div class="main-section-heding">
-                <span class="heading1">Books(128 items)</span>
-                <span class="heading2">Sort by relevance</span>
-            </div> -->
-            <div class="main-section-container" id="item-container">
-            </div>
+          <div class="book-count-section">
+            <div>Books</div>
+          </div>
+          <div class="main-section-container" id="item-container">
+          </div>
         </div>
 
         <div class="bottom-section">

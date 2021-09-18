@@ -48,7 +48,8 @@ function validateAndFetchData(function_name='') {
         if (function_name === "signup") { 
             postService("/bookstore_user/registration", data, headerconfig)
                 .then(res=> {
-                    console.log(res);        
+                    console.log(res);   
+                    localStorage.setItem("name", res.data.result.fullName);      
                 })     
                 .catch((err) => {
                     console.log(err);

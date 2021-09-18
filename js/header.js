@@ -10,34 +10,7 @@ document.getElementById("header-content").innerHTML = `
       <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
       </span>
       
-
-
-            <div class="dropdown">
-              <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-              <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-              </button>
-              <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                <li><a class="dropdown-item" href="#">Hello</a></li>
-                <li><a class="dropdown-item" href="#">
-                  <i class="fa fa-user" aria-hidden="true"></i>
-                  <span class="profile-button">profile</span></a>
-                </li>
-                <li><a class="dropdown-item" href="#">
-                  <i class="fa fa-first-order" aria-hidden="true"></i>
-                  <span class="profile-button">My Order</span></a>
-                </li>
-                <li><a class="dropdown-item" href="#">
-                  <i class="fa fa-heart-o" aria-hidden="true"></i>
-                  <span class="profile-button" onclick="redirectdashboardToWishlist()">My Wishlist</span></a>
-                </li>
-                <li><a class="dropdown-item" href="#">
-                  <button class="logout-button" onclick="clearAccount(), redirectlogoutSectionToSignup()">Logout</button>
-                </a></li>
-              </ul>
-            </div>
-
-
-
+      <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
       <span class="nav-icon4">
         <img src="../assets/dashboard/cart.png" onclick="redirectdashboardToCart()">
       </span>

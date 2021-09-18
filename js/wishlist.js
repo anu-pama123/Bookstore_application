@@ -37,8 +37,11 @@ function getWishlistItems() {
                                             <li style="list-style: none" class="title2">`+ res.data.result[i].product_id.author +`</li>
                                             <li style="list-style: none" class="title4">`+ res.data.result[i].product_id.price +`</li>` +
                                         `</div>`+ 
+                                        `<div class="wishlistToCart">` +
+                                            `<button class="wishlistToCart-button" id=`+ i +` onclick="getWishlistInCart(id);getCartItemsInplaceOrder();">Add to cart</button>` +
+                                        `</div>` +
                                         `<div class="wishlist-delete-button-container">`+
-                                            `<span class="wishlist-delete-button"><i class="fa fa-trash-o" id=`+ i +` onclick="removeBookFromWishlist(id)" aria-hidden="true"></i></span>`+
+                                            `<button class="wishlist-delete-button"><i class="fa fa-trash-o" id=`+ i +` onclick="removeBookFromWishlist(id)" aria-hidden="true"></i></button>`+
                                         `</div>`+    
                                                        
                                 `</div>`
@@ -68,7 +71,7 @@ function removeBookFromWishlist(i) {
     })
 }
 
-// method to display cart item count in wishlist page
+// ---------method to display cart item count in wishlist page------------
 
 function getCartItemsInplaceOrder() {
     const headerconfig = { 
@@ -89,3 +92,32 @@ function getCartItemsInplaceOrder() {
     })
     
 } 
+
+// --------------method to move wishlist to cart items---------------------
+
+function getWishlistInCart(i) {
+    let selectedBook = wishlistItemList[i];
+    const headerconfig = { 
+        headers: {  
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+        }
+    }
+    let data = {
+        "product_id": selectedBook._id
+    }
+    
+    postService("/bookstore_user/add_cart_item/"+ selectedBook._id +"", data, headerconfig)
+        .then(res=> {
+            console.log(res);                           
+        })  
+        .catch((err) => {
+            console.log(err);
+        }); 
+}
+
+// ---------------------method to redirect page--------------------------
+
+function redirectdashboardToCart() {
+    window.location.replace('../pages/cart.html');
+}

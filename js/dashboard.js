@@ -9,12 +9,11 @@ let bookDetailsList = [];
 
 window.addEventListener('DOMContentLoaded', (event) => {
     displayItems();
-    getCartItemsInDashboard();
 });
 
 // ------------------------method to get items-----------------------
   
-function displayItems(searchTerm='') {
+function displayItems(searchInput='') {
     const headerconfig = {   
         'Content-Type': 'application/json',
     };
@@ -25,7 +24,7 @@ function displayItems(searchTerm='') {
     let itemsHTML=``;
     bookDetailsList = res.data.result;
     for(let i=0; i<res.data.result.length; i++) {
-        if((res.data.result[i].bookName.toLowerCase()).includes(searchTerm.toLowerCase())){
+        if((res.data.result[i].bookName.toLowerCase()).includes(searchInput.toLowerCase())){
             console.log(res.data.result[0]._id);
             let button_outer_section_id = "button-outer-section"+res.data.result[i]._id;
             let add_cart_section_id = "add-cart-section"+res.data.result[i]._id;
@@ -39,7 +38,7 @@ function displayItems(searchTerm='') {
                                     <li style="list-style: none" class="title4">`+ res.data.result[i].price +`</li>
                                     <li style="list-style: none" class="title3">
                                     <div class="button-outer" id=`+ button_outer_section_id +`>
-                                        <button class="inner1" id=`+ i  +` onclick="addtocartSwitchVisible(id)">ADD TO BAG</button> 
+                                        <button class="inner1" id=`+ i  +` onclick="addtocartSwitchVisible(id);getCartItemsInDashboard();">ADD TO BAG</button> 
                                         <button class="inner2" id=`+ i +` onclick="wishlistSwitchVisible(id)">WISHLIST</button>        
                                     </div>  
                                     <div class="add-cart" id=`+add_cart_section_id+`>
@@ -132,7 +131,7 @@ function wishlistSwitchVisible(i) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getCartItemsInDashboard();
-    displayItems();
+    // displayItems();
 });
 
 function getCartItemsInDashboard() {
@@ -156,9 +155,11 @@ function getCartItemsInDashboard() {
     
 }    
 
+// -----------------method to search book in dashboard-----------------
+
 function searchBook() {
     let searchInput = document.getElementById('search-book').value;
-    displayItems(searchInput)
+    displayItems(searchInput);
 }
 
 // ---------------------method to redirect page--------------------------
@@ -178,6 +179,7 @@ function redirectdashboardToWishlist() {
 
 function clearAccount() {
     let account = localStorage.clear();
+    redirectlogoutSectionToSignup();
 }
 
 // ---------method to redirect from logout section to login page----------
@@ -186,11 +188,21 @@ function redirectlogoutSectionToSignup() {
     window.location.replace('../pages/signup.html');
 }
 
-// ---------method to redirect from placeorder section to login page----------
+// ---------method to redirect from placeorder section to dashboard page----------
 
-function redirectplaceorderSectionToSignup() {
-    window.location.replace('../pages/signup.html');
+function redirectplaceorderSectionToDashboard() {
+    window.location.replace('../pages/dashboard.html');
 }
 
 
+window.addEventListener('DOMContentLoaded', (event) => {
+    getUsername();
+});
+
+function getUsername() {
+    let name = localStorage.getItem('name');
+    var nHTML = '';
+    nHTML += name;
+    document.getElementById("user-name-section").innerHTML = nHTML 
+}
 
