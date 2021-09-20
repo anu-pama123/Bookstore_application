@@ -21,6 +21,10 @@ function displayItems(searchInput='') {
     .then(res=> {
         console.log(res.data.result);
         console.log(res.data.result.length);
+    let bookCountHTML=``;
+    bookCountHTML+=`<span>(`+res.data.result.length +` items)</span>`
+    document.getElementById("dashboard-book-count").innerHTML = bookCountHTML;
+
     let itemsHTML=``;
     bookDetailsList = res.data.result;
     for(let i=0; i<res.data.result.length; i++) {
@@ -51,7 +55,7 @@ function displayItems(searchInput='') {
                                 ` +
                                 `</div>`+                    
                             `</div>`
-        }                        
+        }                       
     }
     document.getElementById("item-container").innerHTML = itemsHTML;
     })
@@ -131,7 +135,6 @@ function wishlistSwitchVisible(i) {
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getCartItemsInDashboard();
-    // displayItems();
 });
 
 function getCartItemsInDashboard() {
@@ -150,7 +153,7 @@ function getCartItemsInDashboard() {
         
                          `</div>`                         
         document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;
-        displayItems();
+        // displayItems();
     })
     
 }    
@@ -162,14 +165,14 @@ function searchBook() {
     displayItems(searchInput);
 }
 
-// ---------------------method to redirect page--------------------------
+// ---------------------method to redirect dashboard to cart--------------------------
 
 function redirectdashboardToCart() {
     window.location.replace('../pages/cart.html');
 }
 
 
-// ---------------------method to redirect page--------------------------
+// ---------------------method to redirect dashboard to wishlist--------------------------
 
 function redirectdashboardToWishlist() {
     window.location.replace('../pages/wishlist.html');
@@ -194,6 +197,7 @@ function redirectplaceorderSectionToDashboard() {
     window.location.replace('../pages/dashboard.html');
 }
 
+// ---------------method to get uer name in logout dropdown section---------------
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getUsername();
@@ -204,5 +208,5 @@ function getUsername() {
     var nHTML = '';
     nHTML += name;
     document.getElementById("user-name-section").innerHTML = nHTML 
+    document.getElementById("username-in-header").innerHTML = nHTML;
 }
-

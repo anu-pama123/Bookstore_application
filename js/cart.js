@@ -48,9 +48,9 @@ function getCartItems() {
         let cartItemsHTML=``;
         cartItemList = res.data.result;
         let itemCountHTML=``;
-        itemCountHTML += `<div class="cart-item-count">`+ res.data.result.length +
+        itemCountHTML += `<span class="cart-item-count">`+ res.data.result.length +
         
-                         `</div>`
+                         `</span>`
         for(let i=0; i<res.data.result.length; i++) {
             console.log(res.data.result[0]._id);
             cartItemsHTML +=    `<div class="cart-item-section">`+
@@ -104,6 +104,13 @@ function addCustomerDetails() {
         'x-access-token': localStorage.getItem('token')
         }
     }
+    validateName();
+    validatePhone();
+    validatePincode();
+    validateLocality();
+    validateAddress();
+    validateTown();
+    validateLandmark();
     putService("/bookstore_user/edit_user",data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
@@ -152,10 +159,11 @@ function addOrder() {
     let data = {
         "orders": itemListToOrder
     }
-    
+
     postService("/bookstore_user/add/order", data, headerconfig)
     .then(res=> {
         console.log(res.data.result);
+        redirectToPlaceorderPage();
     })
 }
 
@@ -201,6 +209,88 @@ function decreaseCartItem(i) {
     })
 }
 
+// --------------method to redirect to place order page-----------------
+
 function redirectToPlaceorderPage() {
     window.location.replace('../pages/placeorder.html');
 }
+
+// --------------method to redirect to dashboard page-----------------
+
+function redirectCartToDashboard() {
+    window.location.replace('../pages/dashboard.html');
+}
+
+
+
+// --------------------------------------validation section------------------------------------
+
+// name validation    
+
+function validateName() {
+    const name = document.getElementById('first-name');
+
+    const nameError = document.getElementById('name-error');    
+
+    if(name.value == "") nameError.textContent = "Enter your full name";        
+}
+
+// phone number validation
+
+function validatePhone() {
+    const phone = document.getElementById('phone-number');
+    const phnError = document.getElementById('phone-error');
+    let pwdRegex = RegExp('^[0-9]{10}$');
+    if (pwdRegex.test(phone.value))
+        phnError.textContent = "";
+    else phnError.textContent = "Enter your phone number";
+}
+
+// pincode validation
+
+function validatePincode() {
+    const pincode = document.getElementById('pincode');
+    const phnError = document.getElementById('pincode-error');
+    let pwdRegex = RegExp('^[0-9]{6}$');
+    if (pwdRegex.test(pincode.value))
+        phnError.textContent = "";
+    else phnError.textContent = "Enter your pincode";
+}
+
+// locality validation    
+
+function validateLocality() {
+    const city = document.getElementById('city');
+
+    const cityError = document.getElementById('city-error');    
+
+    if(city.value == "") cityError.textContent = "Enter your full name";        
+}
+
+// address validation    
+
+function validateAddress() {
+    const address = document.getElementById('address');
+    const addressError = document.getElementById('address-error');    
+
+    if(address.value == "") addressError.textContent = "Enter your address";        
+}
+
+// city/town validation    
+
+function validateTown() {
+    const town = document.getElementById('state');
+    const townError = document.getElementById('state-error');    
+
+    if(town.value == "") townError.textContent = "Enter your city or town";        
+}
+
+// landmark validation    
+
+function validateLandmark() {
+    const landmark = document.getElementById('landmark');
+    const landmarkError = document.getElementById('landmark-error');    
+
+    if(landmark.value == "") landmarkError.textContent = "Enter your landmark";        
+}
+

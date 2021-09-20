@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/header.css">
     <link rel="stylesheet" href="../css/footer.css">
@@ -24,8 +22,8 @@
                 <div class="place-order-section" id="place-order-page">
                     <div class="section1">
                         <div class="subsection1">
-                            <h1 class="cart-title">My cart
-                            </h1>
+                            <span class="cart-title">My cart
+                            </span>
                             <span id="place-order-section-cart-count"></span>
                         </div>
                         <div class="subsection2">
@@ -50,38 +48,49 @@
                         <div class="floating-label-name">      
                             <input class="floating-input" id="first-name" type="" placeholder=" " autocomplete="off">
                             <label>Name</label>
-                        </div>               
+                            <div class="name-error" id="name-error"></div> 
+                        </div>  
         
                         <div class="floating-label-name">      
-                            <input class="floating-input" id="last-name"  type="" placeholder=" " autocomplete="off">
+                            <input class="floating-input" id="phone-number"  type="" placeholder=" " autocomplete="off">
                             <label>Phone Number</label>
+                            <li style="list-style-type:none">
+                                <div class="phone-error" value="text" for="name" id="phone-error"></div>    
+                              </li> 
                         </div>
+                        
                         <li style="list-style-type: none;">
                             <div class="floating-label-locality">      
                                 <input class="floating-input" id="pincode" type="" placeholder=" " autocomplete="off">
                                 <label>Pincode</label>
-                            </div>  
-                                
+                                <div class="pincode-error" value="text" for="name" id="pincode-error"></div>   
+                            </div>    
             
                             <div class="floating-label-locality">      
                                 <input class="floating-input" id="city"  type="" placeholder=" " autocomplete="off">
                                 <label>Locality</label>
+                        
+                                    <div class="city-error" value="text" for="name" id="city-error"></div>    
+                                
                             </div>
                         </li> 
         
                         <div class="floating-label-address">      
-                            <input class="floating-input" id="address" type="email" placeholder=" " autocomplete="off">
+                            <input class="floating-input" id="address" type="address" placeholder=" " autocomplete="off">
                             <label>Address</label>
+                            <div class="address-error" value="text" for="name" id="address-error"></div> 
                         </div>
         
-                        <div class="floating-label" type="pass">      
+                        <div class="floating-label" type="landmark">      
                             <input class="floating-input" id="state" type="" placeholder=" " autocomplete="off">
                             <label>city/town</label>
+                            <div class="state-error" value="text" for="name" id="state-error"></div>
                         </div>
                         
-                        <div class="floating-label" type="pass">      
-                            <input class="floating-input" id="submit-password" type="" placeholder=" " autocomplete="off">
+                        <div class="floating-label" type="landmark">      
+                            <input class="floating-input" id="landmark" type="" placeholder=" " autocomplete="off">
                             <label>Landmark</label>
+                            <div class="landmark-error" value="text" for="name" id="landmark-error"></div>
                         </div>
 
                     </div>    
@@ -108,7 +117,7 @@
                             <div class="title-section" id="order-summery-section-order-description"></div>
                         </div>
                         <div class="button-container">
-                            <button class="button-section" onclick="addOrder(), redirectToPlaceorderPage()">CHECKOUT</button>
+                            <button class="button-section" onclick="addOrder()">CHECKOUT</button>
                         </div>
                     </div>
                 </div>
@@ -126,12 +135,15 @@
             
     </div>
 
-    
+    <!-- -------------------js section------------------------->
+
     <script src="../js/header.js"></script>
     <script src="../js/footer.js"></script>
     <script src="../service/service.js"></script>
     <script src="../js/cart.js"></script>
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
 
 </body>
 </html>

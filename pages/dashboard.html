@@ -6,8 +6,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-KyZXEAg3QhqLMpG8r+8fhAXLRk2vvoC2f3B09zVXn8CA5QIVfZOJ3BCsw2P0p/We" crossorigin="anonymous"> 
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
     <link rel="stylesheet" href="../css/dashboard.css">
     <link rel="stylesheet" href="../css/header.css">
@@ -15,79 +13,86 @@
 <body>
     <div class="body-container">
 
-        <!-- --------------navbar section--------------- -->
-        
-        <div id=header-content class="header-section">
-            <nav class="navbar navbar-light bg-light">
-                <div class="container-fluid">
-                  <form class="d-flex">
-                    <span class="nav-icon1">
-                        <img src="../assets/dashboard/education (1).svg">
-                    </span>
-                    <span class="nav-icon2">Bookstore</span>
-                    <span class="search">
-                    <input class="form-control me-2" type="search" id="search-book" autocomplete="off" placeholder="Search" aria-label="Search" onkeypress="searchBook()">
-                    </span>
+      <!-- --------------navbar section--------------- -->
+      
+      <div id=header-content class="header-section">
+        <nav class="navbar navbar-light bg-light">
+          <div class="container-fluid">
+            <form class="d-flex">
+              <span class="nav-icon1">
+                  <img src="../assets/dashboard/education (1).svg">
+              </span>
+              <span class="nav-icon2">Bookstore</span>
+              <span class="search">
+              <input class="form-control me-2" type="search" id="search-book" autocomplete="off" placeholder="Search" aria-label="Search" onkeypress="searchBook()">
+              </span>
+              
+                <!-- ----------------dropdown section------------------ -->
                     
-              
-              
-                          <div class="dropdown">
-                            <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
-                            <span><i class="fa fa-user-o" aria-hidden="true"></i></span>
-                            </button>
-                            <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
-                              <li><a class="dropdown-item" href="#"><span class="Hello-button">Hello</span>
-                                <span id="user-name-section" class="user-name"></span>
-                                ,</a></li>
-                              <li><a class="dropdown-item" href="#">
-                                <i class="fa fa-user" aria-hidden="true"></i>
-                                <span class="profile-button">profile</span></a>
-                              </li>
-                              <li><a class="dropdown-item" href="#">
-                                <i class="fa fa-first-order" aria-hidden="true"></i>
-                                <span class="profile-button">My Order</span></a>
-                              </li>
-                              <li><a class="dropdown-item" href="#">
-                                <i class="fa fa-heart-o" aria-hidden="true"></i>
-                                <span class="profile-button" onclick="redirectdashboardToWishlist()">My Wishlist</span></a>
-                              </li>
-                              <li><a class="dropdown-item" href="#">
-                                <button class="logout-button" onclick="clearAccount()" >Logout</button>
-                              </a></li>
-                            </ul>
-                          </div>
-              
-              
-              
-                    <span class="nav-icon4">
-                      <img src="../assets/dashboard/cart.png" onclick="redirectdashboardToCart()">
+                <div class="dropdown">
+                  <button class="btn btn-secondary dropdown-toggle" type="button" id="dropdownMenuButton1" data-bs-toggle="dropdown" aria-expanded="false">
+                    <span><i class="fa fa-user-o" aria-hidden="true"></i>
+                      <li style="list-style-type:none" class="user" id="username-in-header"></li>
                     </span>
-                    <span class="nav-section-cart-count" id="nav-section-cart-icon"></span>
-                    
-                  </form>
+                  </button>
+                  <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton1">
+                    <li><a class="dropdown-item" href="#"><span class="Hello-button">Hello</span>
+                      <span id="user-name-section" class="user-name"></span>
+                      ,</a></li>
+                    <li><a class="dropdown-item" href="#">
+                      <i class="fa fa-user" aria-hidden="true"></i>
+                      <span class="profile-button">profile</span></a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                      <i class="fa fa-first-order" aria-hidden="true"></i>
+                      <span class="profile-button">My Order</span></a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                      <i class="fa fa-heart-o" aria-hidden="true"></i>
+                      <span class="profile-button" onclick="redirectdashboardToWishlist()">My Wishlist</span></a>
+                    </li>
+                    <li><a class="dropdown-item" href="#">
+                      <button class="logout-button" onclick="clearAccount()" >Logout</button>
+                    </a></li>
+                  </ul>
                 </div>
-                </nav>
+                      
+              <span class="nav-icon4">
+                <img src="../assets/dashboard/cart.png" onclick="redirectdashboardToCart()">
+                <li style="list-style-type:none" class="cart-title-in-header">cart</li>
+                <span class="nav-section-cart-count" id="nav-section-cart-icon"></span>
+              </span>
+              <!-- <span class="nav-section-cart-count" id="nav-section-cart-icon"></span> -->
               
-        </div>
+            </form>
+          </div>
+        </nav>            
+      </div>
         
-        <!-- ----------------main section--------------- -->
+      <!-- ----------------main section--------------- -->
 
-        <div class="main-section">
-          <div class="book-count-section">
-            <div>Books</div>
-          </div>
-          <div class="main-section-container" id="item-container">
-          </div>
+      <div class="main-section">
+        <div class="book-count-section">
+          <span>Books</span>
+          <span class="dashboard-book" id="dashboard-book-count"></span>
         </div>
+        <div class="main-section-container" id="item-container">
+        </div>
+      </div>
 
-        <div class="bottom-section">
-            <h1>copyright @ 2020,Bookstore Private Limited. All Rights Reserved</h1>
-        </div>
+      <div class="bottom-section">
+          <h1>copyright @ 2020,Bookstore Private Limited. All Rights Reserved</h1>
+      </div>
     </div>
+
+    <!-- -----------------js section------------------ -->
+
     <script src="../service/service.js"></script>
     <script src="../js/dashboard.js"></script>
     <script src="../js/validation.js"></script>
-    <!-- <script src="../js/header.js"></script> -->
     <script src="https://unpkg.com/axios/dist/axios.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js" integrity="sha384-eMNCOe7tC1doHpGoWe/6oMVemdAVTMs2xqW4mwXrXsW0L84Iytr2wi5v2QjrP/xp" crossorigin="anonymous"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.min.js" integrity="sha384-cn7l7gDp0eyniUwwAZgrzD06kc/tftFf19TOAs2zVinnD/C7E91j9yyk5//jjpt/" crossorigin="anonymous"></script>
+
 </body>
 </html>

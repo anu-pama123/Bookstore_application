@@ -93,7 +93,6 @@ body {
 
 .item-section {
     width: 19%;
-    /* height: 50%; */
     margin: 10px;
     display: flex;
     background: rgb(238, 235, 235);
@@ -102,7 +101,6 @@ body {
 }
 
 .item {
-    /* width: 39%; */
     height: 60%;
     margin: 10px;
     display: flex;
@@ -190,13 +188,11 @@ body {
 .add-cart {
     display: none;
     padding-bottom: 10px;
-    /* width: 100%; */
 }
 
 .wishlist {
     display: none;
     padding-bottom: 10px;
-    /* width: 100%; */
 }
 
 .cart-button {
@@ -253,6 +249,29 @@ body {
     padding-left: 2px;
 }
 
+.dashboard-book {
+    text-align: left;
+    font: normal normal normal 12px/16px Roboto;
+    letter-spacing: 0px;
+    color: #9D9D9D;
+    opacity: 1;
+}
+
+/* .user {
+    padding-left: 200px;
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0.45px;
+    color: #FFFFFF;
+    opacity: 1;
+}
+
+.cart-title-in-header {
+    font: normal normal normal 10px/13px Roboto;
+    letter-spacing: 0.45px;
+    color: #FFFFFF;
+    opacity: 1;
+} */
+
 /* -----------media queries----------- */
 
 @media only screen and (max-width: 770px) {
@@ -262,6 +281,10 @@ body {
 
     .body-container {
         overflow-x: hidden !important;
+    }
+
+    .user {
+        padding-left: 1px;
     }
 
     .search {
@@ -285,6 +308,12 @@ body {
     .nav-icon4 {
         padding-top: 15px;
         padding-left: 25px !important;
+    }
+
+    .nav-section-cart-count {
+        left: 32px !important;
+        width: 39% !important;
+        padding-left: 2.5px !important;
     }
     
     .cart-item-count-in-dashboard {
@@ -329,6 +358,20 @@ body {
     .dropdown-menu {
         min-width: 7rem;
     }
+
+    .user {
+        padding-left: 20px !important;
+    }
+}
+
+@media only screen and (max-width: 748px) {  
+    .book-count-section  {
+        padding-left: 3% !important;
+    }
+
+    .inner1, .inner2 {
+        width: 65px !important;
+    }
 }
 
 @media only screen and (max-width: 741px) {
@@ -359,15 +402,18 @@ body {
     .dropdown {
         padding-left: 380px;
     } 
+    .book-count-section  {
+        padding-left: 12% !important;
+    }
+    .inner1, .inner2 {
+        width: 69px !important;
+    }
 }
 
 @media only screen and (max-width: 617px) {  
     .dropdown {
         padding-left: 340px;
     } 
-    .nav-section-cart-count  {
-        width: 6% !important;
-    }
 }
 
 
@@ -375,18 +421,12 @@ body {
     .dropdown {
         padding-left: 280px;
     } 
-    .nav-section-cart-count  {
-        width: 6% !important;
-    }
 }
 
 @media only screen and (max-width: 527px) {  
     .dropdown {
         padding-left: 190px !important;
     } 
-    .nav-section-cart-count  {
-        width: 6% !important;
-    }
 }
 
 @media only screen and (max-width: 487px) {  
@@ -418,12 +458,6 @@ body {
     .dropdown {
         padding-left: 140px !important;
     } 
-    .nav-section-cart-count  {
-        width: 6% !important;
-    }
-    /* .item-section {
-        width: 6% !important;
-    } */
     .inner1, .inner2 {
         width: 100px !important;
     }
@@ -434,11 +468,8 @@ body {
     .dropdown {
         padding-left: 100px !important;
     } 
-    .nav-section-cart-count  {
-        width: 6% !important;
-    }
     .book-count-section  {
-        padding-left: 24%;
+        padding-left: 17% !important;
     }
     .bottom-section h1 {
         padding-left: 0px !important;
@@ -446,7 +477,6 @@ body {
     .inner1, .inner2 {
         width: 70px !important;
     }
-
 }
 
 @media only screen and (max-width: 474px) {  
@@ -460,30 +490,33 @@ body {
     .inner1, .inner2 {
         width: 110px !important;
     }
-
 }
 
 @media only screen and (max-width: 341px) {  
     .dropdown {
         padding-left: 50px !important;
     } 
-    .nav-section-cart-count  {
-        width: 9% !important;
-    }
     .book-count-section  {
         padding-left: 24%;
     }
-
-    /* .item-section {
-        width: 60% !important;
-    } */
 }
 
 @media only screen and (max-width: 371px) {  
     .inner1, .inner2 {
         width: 100px !important;
     }
+}
 
+@media only screen and (max-width: 365px) {  
+    .cart-button {
+        padding-left: 30px;
+        padding-right: 30px;
+    }
+
+    .wishlist-button {
+        padding-left: 43px;
+        padding-right: 43px;
+    }
 }
 
 @media only screen and (max-width: 342px) {  
@@ -497,9 +530,6 @@ body {
     .dropdown {
         padding-left: 10px !important;
     } 
-    .nav-section-cart-count  {
-        width: 9% !important;
-    }
     .book-count-section  {
         padding-left: 24%;
     }
@@ -508,7 +538,10 @@ body {
 @media only screen and (max-width: 480px) {
     .item-section {
         width: 51%;        
-    }    
+    }      
+    .book-count-section  {
+        padding-left: 17% !important;
+    }
 }
 
 

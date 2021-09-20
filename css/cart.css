@@ -46,6 +46,10 @@ body {
     padding-left: 40px;
 }
 
+.subsection1 {
+    padding-top: 15px !important;    
+}
+
 .subsection1 h1 {
     text-align: left;
     letter-spacing: 0px !important;
@@ -154,7 +158,6 @@ body {
     border-radius: 1px;
     margin-left: 160px;
     margin-top: 20px;
-    /* margin-bottom: 20px; */
     width: 60%;
     padding-left: 40px;
 }
@@ -213,11 +216,11 @@ body {
     display: inline-block;
 }
   
-.floating-input[type="email"] {
+.floating-input[type="address"] {
     width: 450px;    
 }
 
-.floating-label[type="pass"] {   
+.floating-label[type="landmark"] {   
     position:relative; 
     display: inline-block;
     
@@ -338,8 +341,10 @@ label {
     border: none;
     color: white;
     font-size: 10px;
-    padding-top: 5px;
-    padding-bottom: 5px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
 }
 
 .order-summery-section {
@@ -407,34 +412,25 @@ label {
     padding-left: 150px;
 }
 
-/* ---------------------------------- */
-
-.cart-item-section {
-    display: flex;
-    flex-direction: column;
-    padding-bottom: 15px;
-}
-
-.cart-item-title {
-    padding-left: 50px;
-}
-
-.nav-section-cart-count {
-    border-style: solid;
-    border-radius: 25px;
-    height: 25px;
-    width: 2%;
-    background-color: white;
-    color: #A03037;
-}
-
-.cart-item-count {
-    padding-left: 2px;
-}
-
 .image-and-description {
     display: flex;
     flex-direction: row;
+}
+
+.address-error, .pincode-error, .name-error, .city-error, .phone-error, .state-error, .landmark-error {
+    font-size: 10px;
+    text-align: left;
+    font: normal normal normal 10px Roboto;
+    letter-spacing: 0px;
+    color: #FF001C;
+    opacity: 1;
+    height: 10px;
+    padding-top: 2px;
+    padding-left: 10px;
+}
+
+.cart-item-title {
+    padding-left: 50px !important;
 }
 
 /* -----------media queries----------- */
@@ -468,7 +464,8 @@ label {
     }
 
     .nav-section-cart-count {
-        width: 4%;
+        width: 24%;
+        padding-left: 2px;
     }
     
     .cart-item-count-in-dashboard {
@@ -504,14 +501,22 @@ label {
     }
     
     .button-container {
-        padding-left: 10px !important;
+        padding-left: 320px !important;
+    }
+
+    .button-section {
+        width: 90%;
     }
 
     .continue-button {
-        padding-left: 6px;
+        padding-left: 320px;
     }
 
-    .floating-input[type="email"] {
+    .continue-section {
+        width: 90%;
+    }
+
+    .floating-input[type="address"] {
         width: 212px !important;
     }
 
@@ -519,19 +524,52 @@ label {
         overflow-x: hidden !important;
     }
 
-    .section1, .section2, .section3, .customer-details-section2, .order-summery-section3 {
-        margin-left: 80px;
-    }
-
-    .button-section {
-        width: 20%;
+    .nav-section-cart-count {
+        left: 50px;
+        width: 28%;
     }
 }
 
+@media only screen and (max-width: 752px) {
+    .continue-button {
+        padding-left: 200px;
+    }
+
+    .continue-section {
+        width: 60%;
+    }
+    .button-container {
+        padding-left: 200px !important;
+    }
+
+    .button-section {
+        width: 60%;
+    }
+    .section1, .section2, .section3, .customer-details-section2, .order-summery-section3 {
+        margin-left: 120px;
+    } 
+}  
+
+@media only screen and (max-width: 623px) {
+    .continue-button {
+        padding-left: 150px;
+    }
+
+    .continue-section {
+        width: 50%;
+    }
+    .button-container {
+        padding-left: 150px !important;
+    }
+
+    .button-section {
+        width: 50%;
+    }
+}  
+
 @media only screen and (max-width: 683px) {
     .form-control {
-        display: none !important;
-        
+        display: none !important;        
     }
 
     .search {
@@ -545,14 +583,9 @@ label {
     .fa-user-o {
         padding-left: 300px;
     }
-
-    .nav-section-cart-count {
-        width: 4%;
-    }   
-    
 }
 
-@media only screen and (max-width: 537px) {
+@media only screen and (max-width: 538px) {
     .nav-icon4 {
         padding-top: 15px;
         padding-left: 40px !important;
@@ -561,21 +594,45 @@ label {
     .fa-user-o {
         padding-left: 230px;
     }
+    .continue-button {
+        padding-left: 30px !important;
+    }
 
-    .nav-section-cart-count {
-        width: 7%;
-    }   
+    .continue-section {
+        width: 50% !important;
+    }
+    .button-container {
+        padding-left: 10px !important;
+    }
+
+    .button-section {
+        width: 50% !important;
+    }
     
 }    
 
 @media only screen and (max-width: 526px) {
-  .floating-input {
-      width: 80%;
-  }
+    .floating-input {
+        width: 80%;
+    }
 
-  .floating-input[type="email"] {
-      width: 80% !important;
-  }
+    .floating-input[type="address"] {
+        width: 80% !important;
+    }
+    .continue-button {
+    padding-left: 10px !important;
+    }
+
+    .continue-section {
+        width: 50% !important;
+    }
+    .button-container {
+        padding-left: 1px !important;
+    }
+
+    .button-section {
+        width: 50% !important;
+    }
 }
 
 @media only screen and (max-width: 597px) {
@@ -588,9 +645,27 @@ label {
     }
     
     .cart-item-title {
-        padding-left: 0px;
+        padding-left: 0px !important;
         padding-top: 10px;
     }
+
+    .continue-button {
+        padding-left: 120px;
+    }
+
+    .continue-section {
+        width: 50%;
+    }
+    .button-container {
+        padding-left: 120px;
+    }
+
+    .button-section {
+        width: 50%;
+    }
+    .section1, .section2, .section3, .customer-details-section2, .order-summery-section3 {
+        margin-left: 100px;
+    } 
 }
 
 @media only screen and (max-width: 466px) {
@@ -603,33 +678,27 @@ label {
         padding-left: 160px;
     }
 
-    .nav-section-cart-count {
-        width: 7%;
-    }   
-
     .bottom-section h1 {
         padding-left: 20px;
-    }
-    
+    }   
+    .section1, .section2, .section3, .customer-details-section2, .order-summery-section3 {
+        margin-left: 80px;
+    }  
 } 
 
 @media only screen and (max-width: 388px) {
     .fa-user-o {
         padding-left: 120px;
     }
-
-    .nav-section-cart-count {
-        width: 7%;
-    }       
+    
 }
-
 
 @media only screen and (max-width: 347px) {
     .fa-user-o {
         padding-left: 60px;
     }
 
-    .nav-section-cart-count {
-        width: 7%;
-    }       
+    .section1, .section2, .section3, .customer-details-section2, .order-summery-section3 {
+        margin-left: 60px;
+    } 
 }
