@@ -12,9 +12,9 @@
 }
 
 .nav-icon1 img{
-    padding-top: 14px;
+    padding-top: 17px;
     padding-left: 140px;
-    height: 60%;
+    height: 65%;
 }
 
 .nav-icon2 {
@@ -51,7 +51,7 @@
 } 
 
 .nav-section-cart-count {
-    top: 14px;
+    top: 8px;
     left: 58px;
     position: absolute;
     width: 24%;
@@ -59,7 +59,7 @@
     border-radius: 25px;    
     background-color: white;
     color: #A03037;
-    padding-left: 1px;
+    padding-left: 2px;
     font-size: 15px;
 }
 

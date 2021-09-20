@@ -30,6 +30,7 @@ function orderSummerySwitchVisible() {
 
 window.addEventListener('DOMContentLoaded', (event) => {
     getCartItems();
+    getCartItemsInOrderSummery()
 });
 
 // --------------method to get cart items-----------------
@@ -50,7 +51,7 @@ function getCartItems() {
         let itemCountHTML=``;
         itemCountHTML += `<span class="cart-item-count">`+ res.data.result.length +
         
-                         `</span>`
+                         ` )</span>`
         for(let i=0; i<res.data.result.length; i++) {
             console.log(res.data.result[0]._id);
             cartItemsHTML +=    `<div class="cart-item-section">`+
@@ -60,7 +61,7 @@ function getCartItems() {
                                     `</div>` +  
                                     `<div class="cart-item-title">`+ res.data.result[i].product_id.bookName +`
                                         <li style="list-style: none" class="title2">`+ res.data.result[i].product_id.author +`</li>
-                                        <li style="list-style: none" class="title4">`+ res.data.result[i].product_id.price +`</li>
+                                        <li style="list-style: none" class="title4">Rs. `+ res.data.result[i].product_id.price +`</li>
                                         
                                     ` +
                                     `</div>`+ 
@@ -69,20 +70,56 @@ function getCartItems() {
                                 `<div class="subsection3">`+
                         
                                     `<span class="minus-count" id=`+ i  +` onclick="decreaseCartItem(id)">-</span>`+
-                                    `<span class="count">`+res.data.result[i].quantityToBuy+`</span>`+
-                                    `<span class="add-count" id=`+ i  +` onclick="increaseCartItem(id)">+</span>`+
+                                    `<span class="quantity-section">`+
+                                        `<span class="count">`+res.data.result[i].quantityToBuy+`</span>`+
+                                    `</span>`+    
+                                    `<span class="add-count-section">`+
+                                        `<span class="add-count" id=`+ i  +` onclick="increaseCartItem(id)">+</span>`+
+                                    `</span>`+
                                     `<span class="remove-section" id=`+ i  +` onclick="removeBookFromCart(id)">Remove</span> `   +
                                 ` </div> `+
                        
                                                    
                             `</div>`
         }
-        document.getElementById("place-order-section-cart-description").innerHTML = cartItemsHTML;       
-        document.getElementById("order-summery-section-order-description").innerHTML = cartItemsHTML; 
+        document.getElementById("place-order-section-cart-description").innerHTML = cartItemsHTML;        
         document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;
         document.getElementById("place-order-section-cart-count").innerHTML = itemCountHTML;
         document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;
         document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;           
+    })    
+}
+
+// --------------method to get cart items in order summery section-----------------
+
+function getCartItemsInOrderSummery() {
+    const headerconfig = { 
+        headers: {  
+        'Content-Type': 'application/json',
+        'x-access-token': localStorage.getItem('token')
+        }
+    }
+    let cartItemsHTML=``;
+    getService("​/bookstore_user/get_cart_items", headerconfig)
+    .then(res=> {
+        console.log(res.data.result);
+        for(let i=0; i<res.data.result.length; i++) {
+            console.log(res.data.result[0]._id);
+            cartItemsHTML +=    `<div class="order-summery-cart-item-section">`+
+                                `<div class="image-and-description">`+
+                                    `<div class="cart-image-item">`+
+                                        `<img src="../assets/dashboard/img2.png">`+
+                                    `</div>` +  
+                                    `<div class="cart-item-title">`+ res.data.result[i].product_id.bookName +`
+                                        <li style="list-style: none" class="title2">`+ res.data.result[i].product_id.author +`</li>
+                                        <li style="list-style: none" class="title4">Rs. `+ res.data.result[i].product_id.price +`</li>
+                                        
+                                    ` +
+                                    `</div>`+ 
+                                `</div>`+                   
+                            `</div>`
+        }
+        document.getElementById("order-summery-section-order-description").innerHTML = cartItemsHTML;                 
     })    
 }
 
