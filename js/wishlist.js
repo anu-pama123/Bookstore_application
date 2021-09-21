@@ -38,7 +38,7 @@ function getWishlistItems() {
                                             <li style="list-style: none" class="title4">`+ res.data.result[i].product_id.price +`</li>` +
                                         `</div>`+ 
                                         `<div class="wishlistToCart">` +
-                                            `<button class="wishlistToCart-button" id=`+ i +` onclick="getWishlistInCart(id);getCartItemsInplaceOrder();">Add to cart</button>` +
+                                            `<button class="wishlistToCart-button" id=`+ i +` onclick="getWishlistInCart(id);getCartItemsInplaceOrder();removeBookFromWishlist(id);">Add to cart</button>` +
                                         `</div>` +
                                         `<div class="wishlist-delete-button-container">`+
                                             `<button class="wishlist-delete-button"><i class="fa fa-trash-o" id=`+ i +` onclick="removeBookFromWishlist(id)" aria-hidden="true"></i></button>`+

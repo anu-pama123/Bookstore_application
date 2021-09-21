@@ -260,7 +260,7 @@ function redirectCartToDashboard() {
 
 
 
-// --------------------------------------validation section------------------------------------
+// --------------------------------------customer details validation section------------------------------------
 
 // name validation    
 

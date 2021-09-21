@@ -163,6 +163,9 @@ function getCartItemsInDashboard() {
 function searchBook() {
     let searchInput = document.getElementById('search-book').value;
     displayItems(searchInput);
+    if(searchInput=="") {
+        displayItems();
+    }
 }
 
 // ---------------------method to redirect dashboard to cart--------------------------
