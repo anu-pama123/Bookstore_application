@@ -67,7 +67,8 @@ function removeBookFromWishlist(i) {
     
     deleteService("/bookstore_user/remove_wishlist_item/"+selectedBookToRemove.product_id._id+"", data, headerconfig)
     .then(res=> {
-        getWishlistItems();  
+        getWishlistItems(); 
+        getCartItemsInplaceOrder(); 
     })
 }
 
@@ -89,6 +90,7 @@ function getCartItemsInplaceOrder() {
         
                          `</div>`                         
         document.getElementById("nav-section-cart-icon").innerHTML = itemCountHTML;
+        getCartItemsInplaceOrder();
     })
     
 } 
@@ -107,9 +109,9 @@ function getWishlistInCart(i) {
         "product_id": selectedBook._id
     }
     
-    postService("/bookstore_user/add_cart_item/"+ selectedBook._id +"", data, headerconfig)
+    postService("/bookstore_user/add_cart_item/"+ selectedBook.product_id._id +"", data, headerconfig)
         .then(res=> {
-            console.log(res);                           
+            console.log(res, "------------");                           
         })  
         .catch((err) => {
             console.log(err);

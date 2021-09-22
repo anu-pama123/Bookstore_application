@@ -1,7 +1,7 @@
 .bg-light {
     background: #A03037 0% 0% no-repeat padding-box !important;
     opacity: 1;
-    height: 10% !important;
+    height: 10% ;
     position: absolute !important;
     width: 100%;
 }
