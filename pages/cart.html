@@ -96,11 +96,19 @@
                         <li style="list-style-type: none;" class="type-section-container">
                             Type
                         </li>
-                        <li style="list-style-type: none;" class="type-section">
-                            <span class="home-section"><button class="home-button"></button>Home</span>
-                            <span class="work-section"><button class="work-button"></button>Work</span>
-                            <span class="other-section"><button class="other-button"></button>Other</span>
-                        </li>
+                        
+                        <form action="/action_page.php">
+  
+                            <input type="radio" id="home" name="adrs_type" value="Home" class="home">
+                            <span class="home-section">Home</span>
+                            <input type="radio" id="work" name="adrs_type" value="Office" class="work">
+                            <span class="work-section">Work</span>
+                            <input type="radio" id="other" name="adrs_type" value="Other" class="other">
+                            <span class="other-section">Other</span>
+
+                        </form>
+                        
+
                         <div class="continue-button">
                             <button class="continue-section" onclick="addCustomerDetails(), orderSummerySwitchVisible()">CONTINUE</button>
                         </div>
@@ -115,8 +123,8 @@
                         <div class="subsection2">
                             <div class="title-section" id="order-summery-section-order-description"></div>
                         </div>
-                        <div class="button-container">
-                            <button class="button-section" onclick="addOrder()">CHECKOUT</button>
+                        <div class="checkout-button-container">
+                            <button class="checkout-button-section" onclick="addOrder()">CHECKOUT</button>
                         </div>
                     </div>
                 </div>

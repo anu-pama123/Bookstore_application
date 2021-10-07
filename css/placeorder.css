@@ -261,5 +261,28 @@ table, td {
     .order-placed-section5 {
         width: 70%;
     }
+    .order-placed-section1 {
+        padding-top: 50px;
+    }
+}
 
+@media only screen and (min-device-width: 400px) and (max-device-width: 760px) {
+    .fa-user-o {
+        padding-left: 330px !important;
+    }
+}
+
+@media only screen and (min-device-width: 396px) and (max-device-width: 514px) {
+    .fa-user-o {
+        padding-left: 220px !important;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .fa-user-o {
+        padding-left: 730px !important;
+    }
+    .order-placed-section-container {
+        padding-top: 50px !important;
+    }
 }

@@ -230,7 +230,7 @@ body {
     background: #2E1D1E 0% 0% no-repeat padding-box;
     padding-bottom: 4px;
     opacity: 1;
-
+    /* position:absolute; */
 }
 
 .bottom-section h1 {
@@ -241,6 +241,7 @@ body {
     padding-top: 20px;
     padding-bottom: 10px;
     padding-left: 150px;
+    
 }
 
 /* -----------media queries----------- */
@@ -333,9 +334,9 @@ body {
     .bottom-section h1{
         padding-left: 12px !important;
     }
-}
+}  
 
-@media only screen and (min-device-width: 760px) and (max-device-width: 1100px) {
+@media only screen and (min-width: 760px) and (max-width: 1100px) {
     .search {
         display: none;
     }
@@ -372,3 +373,66 @@ body {
         padding-left: 160px;
     }
 }
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .search {
+        display: none;
+    }
+    .section1 {
+        padding-top: 80px;
+    }
+    .wishlist-header {
+        width: 900px;
+    }
+    .wishlist-item-section {
+        width: 900px;
+    }
+    .fa-user-o {
+        padding-left: 730px !important;
+    }
+}
+
+@media only screen and (min-width: 600px) and (max-width: 750px) {
+    .search {
+        display: none;
+    }
+    .wishlist-header {
+        width: 530px;
+    }
+    .wishlist-item-section {
+        width: 530px;
+    }
+    .fa-user-o {
+        padding-left: 370px !important;
+    }
+}  
+
+@media only screen and (min-width: 850px) and (max-width: 950px) {
+    .search {
+        display: none;
+    }
+    .wishlist-header {
+        width: 830px;
+    }
+    .wishlist-item-section {
+        width: 830px;
+    }
+    .fa-user-o {
+        padding-left: 630px !important;
+    }
+}  
+
+@media only screen and (min-width: 423px) and (max-width: 594px) {
+    .search {
+        display: none;
+    }
+    .wishlist-header {
+        width: 400px;
+    }
+    .wishlist-item-section {
+        width: 400px;
+    }
+    .fa-user-o {
+        padding-left: 230px !important;
+    }
+}  

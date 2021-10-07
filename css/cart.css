@@ -115,18 +115,15 @@ body {
 }
 
 .button-section {
-    width: 65%;
-    padding-top: 10px;
-    padding-bottom: 10px;
     background: #3371B5 0% 0% no-repeat padding-box;
     opacity: 1;
-    font: normal normal medium Lato;
-    font-size: 10px;
-    letter-spacing: 0px;
-    color: #FFFFFF;
-    text-transform: uppercase;
-    opacity: 1;
     border: none;
+    color: white;
+    font-size: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
 }
 
 /* section 2 styling */
@@ -218,7 +215,7 @@ body {
 }
   
 .floating-input[type="address"] {
-    width: 450px;    
+    width: 470px;    
 }
 
 .floating-label[type="landmark"] {   
@@ -282,35 +279,17 @@ label {
     padding-left: 8px;
     padding-top: 7px;
 }
-
-.home-button {
-    border-radius: 20px;
-    height: 12px;
-    width: 1px;
-    background: #F5F5F5 0% 0% no-repeat padding-box;
-    border: 1px solid #DCDCDC;
-    opacity: 1;
+.home {
+    margin-left: 12px !important;
 }
 
-.work-button {
-    border-radius: 20px;
-    height: 12px;
-    width: 1px;
-    background: #F5F5F5 0% 0% no-repeat padding-box;
-    border: 1px solid #DCDCDC;
-    opacity: 1;
-    left: 20px;
+.work {
+    margin-left: 90px;
 }
 
-.other-button {
-    border-radius: 20px;
-    height: 12px;
-    width: 1px;
-    background: #F5F5F5 0% 0% no-repeat padding-box;
-    border: 1px solid #DCDCDC;
-    opacity: 1;
+.other {
+    margin-left: 90px;
 }
-
 .home-section {
     font: normal normal normal 12px/16px Roboto;
     letter-spacing: 0px;
@@ -323,7 +302,6 @@ label {
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
-    padding-left: 90px;
 }
 
 .other-section {
@@ -331,7 +309,6 @@ label {
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
-    padding-left: 90px;
 }
 
 .continue-button {
@@ -341,6 +318,24 @@ label {
 }
 
 .continue-section {
+    background: #3371B5 0% 0% no-repeat padding-box;
+    opacity: 1;
+    border: none;
+    color: white;
+    font-size: 10px;
+    padding-top: 8px;
+    padding-bottom: 8px;
+    padding-left: 13px;
+    padding-right: 13px;
+}
+
+.checkout-button-container {
+    padding-left: 620px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+}
+
+.checkout-button-section {
     background: #3371B5 0% 0% no-repeat padding-box;
     opacity: 1;
     border: none;
@@ -441,7 +436,6 @@ label {
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
-    /* padding-bottom: 157px; */
 }
 
 .title2 {
@@ -460,7 +454,6 @@ label {
     letter-spacing: 0px;
     color: #0A0102;
     opacity: 1;
-    /* padding-top: 10px; */
 }
 
 .cart-image-item img {
@@ -521,7 +514,7 @@ label {
         margin-left: 0px;
     }
     .floating-input[type="address"] {
-        width: 212px;
+        width: 222px;
     }
     .cart-item-title {
         padding-left: 30px !important;
@@ -529,11 +522,8 @@ label {
     .subsection3 {
         padding-left: 0px;
     }
-    .button-container {
+    .button-container, .checkout-button-container {
         padding-left: 1px;
-    }
-    .button-section {
-        width: 32%;
     }
     .continue-button {
         padding-left: 0px;
@@ -546,15 +536,15 @@ label {
     .cart-image-item img {
         height: 110px;
     }
-    .work-section {
-        padding-left: 30px !important;
+    .work {
+        margin-left: 30px !important;
     }
-    .other-section {
-        padding-left: 30px !important;
+    .other {
+        margin-left: 30px !important;
     }
 }
 
-@media only screen and (min-device-width: 400px) and (max-device-width: 760px) {
+@media only screen and (min-device-width: 400px) and (max-device-width: 550px) {
     .search {
         display: none;
     }
@@ -592,7 +582,7 @@ label {
         margin-left: 0px;
     }
     .floating-input[type="address"] {
-        width: 260px;
+        width: 270px;
     }
     .cart-item-title {
         padding-left: 30px !important;
@@ -603,8 +593,8 @@ label {
     .button-container {
         padding-left: 150px;   
     }
-    .button-section {
-        width: 65% !important;
+    .checkout-button-container {
+        padding-left: 180px;
     }
     .continue-button {
         padding-left: 180px;
@@ -614,14 +604,36 @@ label {
         padding-left: 20px;
         width: 75%;
     }
-    .work-section {
-        padding-left: 30px !important;
+    .work {
+        margin-left: 30px !important;
     }
-    .other-section {
-        padding-left: 30px !important;
+    .other {
+        margin-left: 30px !important;
     }
     .cart-image-item img {
         height: 110px;
+    }
+}
+
+@media only screen and (min-device-width: 550px) and (max-device-width: 750px) {
+
+    .section1,.section2,.section3, .customer-details-section2,.order-summery-section3   {
+        margin-left: 50px;
+        padding-left: 30px;
+        width: 87% ;
+    }
+    .fa-user-o {
+        padding-left: 300px !important;
+    }
+    .button-container, .continue-button {
+        padding-left: 320px;
+    }
+    .floating-input {
+        font-size: 29.2px;
+        margin-left: 0px;
+    }
+    .floating-input[type="address"] {
+        width:460px;
     }
 }
 
@@ -678,7 +690,7 @@ label {
         margin-left: 0px;
     }
     .floating-input[type="address"] {
-        width:505px;
+        width:623px;
     }
     .cart-item-title {
         padding-left: 30px !important;
@@ -701,7 +713,9 @@ label {
     }
     .button-container {
         padding-left: 490px;
-        width: 100%;
+    }
+    .checkout-button-container {
+        padding-left: 520px;
     }
     .continue-button {
         padding-left: 520px;
@@ -711,10 +725,19 @@ label {
         padding-left: 20px;
         width: 87%;
     }
-    .work-section {
-        padding-left: 120px;
+    .work {
+        margin-left: 120px;
     }
-    .other-section {
-        padding-left: 120px;
+    .other {
+        margin-left: 120px;
+    }
+}
+
+@media only screen and (min-width: 1024px) and (max-width: 1366px) {
+    .place-order-section {
+        padding-top: 20px;
+    }
+    .fa-user-o {
+        padding-left: 700px !important;
     }
 }

@@ -126,11 +126,18 @@ function getCartItemsInOrderSummery() {
 // --------------customer details adding method------------------
 
 function addCustomerDetails() {
+    let adrsType;
     let address = document.getElementById("address");
     let city = document.getElementById("city");
     let state = document.getElementById("state");
+    let addressType = document.getElementsByName("adrs_type");
+    for (i = 0; i < addressType.length; i++) {
+        if (addressType[i].checked)
+            adrsType = addressType[i].value;
+    }
+    console.log(adrsType);
     let data = {
-        "addressType": "Home" ,
+        "addressType": adrsType ,
         "fullAddress": address.value,
         "city": city.value,
         "state": state.value

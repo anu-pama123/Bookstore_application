@@ -2,7 +2,6 @@ html {
 
     height: 100%;
     width: 100%;
-    overflow-x: hidden;
 }
   
 body {
@@ -325,7 +324,7 @@ body {
     }
 }
 
-@media only screen and (min-device-width: 600px) and (max-device-width: 1100px) {
+@media only screen and (min-device-width: 739px) and (max-device-width: 1100px) {
     .search {
         display: none;
     }
@@ -369,9 +368,51 @@ body {
     }
     .book-count-section {
         padding-left: 3%;
+        padding-top: 15px;
+        padding-bottom: 15px;
     }
     .item img {
         width: 7rem;
         height: 95%;
+    }
+    .dropdown-menu[data-bs-popper] {
+        left: 62% !important;
+        top: 75px !important;
+    }
+}
+
+@media only screen and (min-device-width: 600px) and (max-device-width: 739px) {
+    .search {
+        display: none;
+    }
+    .item-section {
+        width: 40%;
+    }
+    .item img {
+        width: 7rem;
+        height: 95%;
+    }
+    .fa-user-o {
+        padding-left: 380px !important;
+    }
+    .nav-icon4 {
+        padding-left: 20px !important;
+    }
+    .nav-section-cart-count {
+        left: 27px !important;
+        width: 45% !important;
+    }
+    .user {
+        padding-left: 380px !important;
+    }
+    .main-section-container {
+        padding-left: 10px;
+        padding-right: 10px;
+    }
+    .nav-icon1 img {
+        padding-left: 20px !important;
+    }
+    .book-count-section {
+        padding-left: 8%;
     }
 }
